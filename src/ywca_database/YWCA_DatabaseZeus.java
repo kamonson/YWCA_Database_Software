@@ -5,6 +5,13 @@
  */
 package ywca_database;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import ywca_database.UseSQL.SQL_Access;
+
 /**
  *
  * @author Kyle
@@ -17,6 +24,11 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     public YWCA_DatabaseZeus() {
         initComponents();
     }
+
+    private String Query;
+    private String select = "select ";
+    private String from = " from ";
+    private String where = " where ";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +63,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jButton3 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jButtonAccesRun = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldFROM = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldSELECT = new javax.swing.JTextField();
+        jTextFieldWHERE = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,7 +101,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 480, Short.MAX_VALUE))
+                .addGap(0, 518, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1))
@@ -141,7 +162,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +238,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                         .addComponent(jTextField5))
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2))
-                .addContainerGap(692, Short.MAX_VALUE))
+                .addContainerGap(730, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -243,6 +264,84 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         );
 
         jTabbedPane6.addTab("Add User", jPanel3);
+
+        jLabel9.setFont(new java.awt.Font("AR BONNIE", 1, 36)); // NOI18N
+        jLabel9.setText("Query ");
+
+        jButtonAccesRun.setText("Run");
+        jButtonAccesRun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAccesRunActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
+        jLabel8.setText("FROM");
+
+        jTextFieldFROM.setText("jTextField7");
+
+        jLabel10.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
+        jLabel10.setText("SELECT");
+
+        jTextFieldSELECT.setText("jTextField7");
+        jTextFieldSELECT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSELECTActionPerformed(evt);
+            }
+        });
+
+        jTextFieldWHERE.setText("jTextField7");
+
+        jLabel11.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
+        jLabel11.setText("WHERE");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonAccesRun))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(0, 711, Short.MAX_VALUE))
+                    .addComponent(jTextFieldFROM)
+                    .addComponent(jTextFieldWHERE))
+                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldSELECT))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jTextFieldSELECT, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldFROM, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldWHERE, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addComponent(jButtonAccesRun)
+                .addContainerGap())
+        );
+
+        jTabbedPane6.addTab("SQL Access", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -285,6 +384,49 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButtonAccesRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccesRunActionPerformed
+        try {
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Connection accessDB;
+            //jdbc:odbcDriver{Microsoft Access Driver (*.mdb, *.accdb)} must be installed check data sources to ensure it is
+            //DBQ=<path to db>
+            //UID = Admin or username
+            //PWD= <blank> or password
+            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;";
+            accessDB = DriverManager.getConnection(database, "", "");
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            this.select = "select ";
+            this.from = " from ";
+            this.where = " where ";
+            this.Query = "";
+
+            if (this.jTextFieldSELECT.getText().length() < 1) {
+                this.select = "";
+            } else {
+                this.select += this.jTextFieldSELECT.getText();
+            }
+            if (this.jTextFieldFROM.getText().length() < 1) {
+                this.from = "";
+            } else {
+                this.from += this.jTextFieldFROM.getText();
+            }
+            if (this.jTextFieldWHERE.getText().length() < 1) {
+                this.where = "";
+            } else {
+                this.where += this.jTextFieldWHERE.getText();
+            }
+            this.Query = this.select + this.from + this.where + ";";
+            SQL_Access.viewTable(accessDB, Query);
+        } catch (SQLException ex) {
+            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonAccesRunActionPerformed
+
+    private void jTextFieldSELECTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSELECTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSELECTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,6 +456,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new YWCA_DatabaseZeus().setVisible(true);
             }
@@ -325,16 +468,22 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonAccesRun;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -346,5 +495,8 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldFROM;
+    private javax.swing.JTextField jTextFieldSELECT;
+    private javax.swing.JTextField jTextFieldWHERE;
     // End of variables declaration//GEN-END:variables
 }
