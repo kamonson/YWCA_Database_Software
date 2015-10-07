@@ -8,6 +8,7 @@ package ywca_database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ywca_database.UseSQL.SQL_Access;
@@ -29,6 +30,12 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private String select = "select ";
     private String from = " from ";
     private String where = " where ";
+    private static ArrayList<String> Result = new ArrayList<>();
+
+    public static void QueryResults(String result) {
+
+        Result.add(result);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,6 +79,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jTextFieldSELECT = new javax.swing.JTextField();
         jTextFieldWHERE = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaResults = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,7 +123,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 385, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 569, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -193,7 +203,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -259,7 +269,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 459, Short.MAX_VALUE)
                 .addComponent(jButton3))
         );
 
@@ -278,27 +288,39 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
         jLabel8.setText("FROM");
 
-        jTextFieldFROM.setText("jTextField7");
-
         jLabel10.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
         jLabel10.setText("SELECT");
 
-        jTextFieldSELECT.setText("jTextField7");
         jTextFieldSELECT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldSELECTActionPerformed(evt);
             }
         });
 
-        jTextFieldWHERE.setText("jTextField7");
+        jTextFieldWHERE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldWHEREActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("AR BONNIE", 1, 18)); // NOI18N
         jLabel11.setText("WHERE");
+
+        jLabel12.setFont(new java.awt.Font("AR BONNIE", 1, 36)); // NOI18N
+        jLabel12.setText("Results");
+
+        jTextAreaResults.setColumns(20);
+        jTextAreaResults.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaResults);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldSELECT))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
@@ -308,16 +330,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonAccesRun))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(0, 711, Short.MAX_VALUE))
                     .addComponent(jTextFieldFROM)
-                    .addComponent(jTextFieldWHERE))
+                    .addComponent(jTextFieldWHERE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldSELECT))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +357,11 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldWHERE, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAccesRun)
                 .addContainerGap())
         );
@@ -418,6 +443,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             }
             this.Query = this.select + this.from + this.where + ";";
             SQL_Access.viewTable(accessDB, Query);
+            for (int i = 0; i < Result.size(); i++) {
+                this.jTextAreaResults.append(Result.get(i) + "\n");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -426,6 +454,10 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private void jTextFieldSELECTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSELECTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldSELECTActionPerformed
+
+    private void jTextFieldWHEREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldWHEREActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldWHEREActionPerformed
 
     /**
      * @param args the command line arguments
@@ -463,7 +495,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         });
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -472,6 +503,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -487,8 +519,10 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaResults;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
