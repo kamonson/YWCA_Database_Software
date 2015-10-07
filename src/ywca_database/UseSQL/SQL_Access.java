@@ -6,6 +6,7 @@
 package ywca_database.UseSQL;
 
 import java.sql.*;
+import ywca_database.YWCA_DatabaseZeus;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.sql.*;
 public class SQL_Access {
 
     private static String Query;
+    private static String Result;
 
     public static void viewTable(Connection con, String Query)
             throws SQLException {
@@ -25,7 +27,11 @@ public class SQL_Access {
             ResultSet rs;
             rs = stmt.getResultSet();
             while (rs.next() == true) {
-                System.out.println("<" + rs.getString(1) + ", " + rs.getString(2) + ">");
+                //needs to be dynamic to results
+                Result = "<" + rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3) + ">";
+                System.out.println(Result);
+                //results.add(a);
+                YWCA_DatabaseZeus.QueryResults(Result);
             }
             rs.close();
             stmt.close();
