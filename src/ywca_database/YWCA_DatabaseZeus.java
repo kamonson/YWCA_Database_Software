@@ -30,11 +30,43 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private String select = "select ";
     private String from = " from ";
     private String where = " where ";
-    private static ArrayList<String> Result = new ArrayList<>();
+    private static ArrayList <String> Result = new ArrayList<>();
 
     public static void QueryResults(String result) {
 
         Result.add(result);
+    }
+
+    public void RunMySQLQuery(String Query) {
+        try {
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Connection MySQLDB;
+            MySQLDB = DriverManager.getConnection(
+                    "jdbc:odbc:Driver={SQL Server};"
+                    + "Server=KYLELAPTOP\\SQLEXPRESS;Database=Northwind;Trusted_Connection=yes;");
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            SQL_Access.viewTable(MySQLDB, Query);
+        } catch (SQLException ex) {
+            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void RunAccessQuery(String Query) {
+        try {
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Connection accessDB;
+            //jdbc:odbcDriver{Microsoft Access Driver (*.mdb, *.accdb)} must be installed check data sources to ensure it is
+            //DBQ=<path to db>
+            //UID = Admin or username
+            //PWD= <blank> or password
+            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;"
+                    + "C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin;PWD=;";
+            accessDB = DriverManager.getConnection(database, "", "");
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            SQL_Access.viewTable(accessDB, Query);
+        } catch (SQLException ex) {
+            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -82,6 +114,13 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaResults = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+        jComboBoxAccessHW = new javax.swing.JComboBox();
+        jToggleButtonRunAccessAssignment = new javax.swing.JToggleButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaResultHW5Access = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        jButtonRunMySQL = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -368,6 +407,70 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jTabbedPane6.addTab("SQL Access", jPanel4);
 
+        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HW 5.1", "HW 5.2", "HW 5.3", "HW 5.4", "HW 5.5" }));
+        jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxAccessHWActionPerformed(evt);
+            }
+        });
+
+        jToggleButtonRunAccessAssignment.setText("Run Access");
+        jToggleButtonRunAccessAssignment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonRunAccessAssignmentActionPerformed(evt);
+            }
+        });
+
+        jTextAreaResultHW5Access.setColumns(20);
+        jTextAreaResultHW5Access.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaResultHW5Access);
+
+        jLabel13.setText("Result:");
+
+        jButtonRunMySQL.setText("Run MySQL");
+        jButtonRunMySQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRunMySQLActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButtonRunAccessAssignment)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonRunMySQL)))
+                        .addGap(0, 372, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonRunAccessAssignment)
+                    .addComponent(jButtonRunMySQL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane6.addTab("HW5 1-5", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -410,44 +513,33 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonAccesRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccesRunActionPerformed
-        try {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Connection accessDB;
-            //jdbc:odbcDriver{Microsoft Access Driver (*.mdb, *.accdb)} must be installed check data sources to ensure it is
-            //DBQ=<path to db>
-            //UID = Admin or username
-            //PWD= <blank> or password
-            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;";
-            accessDB = DriverManager.getConnection(database, "", "");
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        this.select = "select ";
+        this.from = " from ";
+        this.where = " where ";
+        this.Query = "";
 
-            this.select = "select ";
-            this.from = " from ";
-            this.where = " where ";
-            this.Query = "";
-
-            if (this.jTextFieldSELECT.getText().length() < 1) {
-                this.select = "";
-            } else {
-                this.select += this.jTextFieldSELECT.getText();
-            }
-            if (this.jTextFieldFROM.getText().length() < 1) {
-                this.from = "";
-            } else {
-                this.from += this.jTextFieldFROM.getText();
-            }
-            if (this.jTextFieldWHERE.getText().length() < 1) {
-                this.where = "";
-            } else {
-                this.where += this.jTextFieldWHERE.getText();
-            }
-            this.Query = this.select + this.from + this.where + ";";
-            SQL_Access.viewTable(accessDB, Query);
-            for (int i = 0; i < Result.size(); i++) {
-                this.jTextAreaResults.append(Result.get(i) + "\n");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+        if (this.jTextFieldSELECT.getText().length() < 1) {
+            this.select = "";
+        } else {
+            this.select += this.jTextFieldSELECT.getText();
+        }
+        if (this.jTextFieldFROM.getText().length() < 1) {
+            this.from = "";
+        } else {
+            this.from += this.jTextFieldFROM.getText();
+        }
+        if (this.jTextFieldWHERE.getText().length() < 1) {
+            this.where = "";
+        } else {
+            this.where += this.jTextFieldWHERE.getText();
+        }
+        this.Query = this.select + this.from + this.where + ";";
+        this.RunAccessQuery(Query);
+        if (this.jTextAreaResults.getText() != "") {
+            this.jTextAreaResults.setText("");
+        }
+        for (int i = 0; i < Result.size(); i++) {
+            this.jTextAreaResults.append(Result.get(i) + "\n");
         }
     }//GEN-LAST:event_jButtonAccesRunActionPerformed
 
@@ -458,6 +550,39 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private void jTextFieldWHEREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldWHEREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldWHEREActionPerformed
+
+    private void jToggleButtonRunAccessAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRunAccessAssignmentActionPerformed
+        // TODO add your handling code here:
+        this.RunAccessQuery(Query);
+        if (this.jTextAreaResultHW5Access.getText() != "") {
+            this.jTextAreaResultHW5Access.setText("");
+        }
+        for (int i = 0; i < Result.size(); i++) {
+            this.jTextAreaResultHW5Access.append(Result.get(i) + "\n");
+        }
+    }//GEN-LAST:event_jToggleButtonRunAccessAssignmentActionPerformed
+
+    private void jComboBoxAccessHWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAccessHWActionPerformed
+        // TODO add your handling code here:
+        this.Query = "";
+        if (this.jComboBoxAccessHW.getSelectedIndex() == 0) {
+            this.Query
+                    = "SELECT p.[Product Name], (p.[List Price] * 1.1)  AS \"10%_More\" "
+                    + "FROM Products p "
+                    + "Group By p.[Product Name],  (p.[List Price] * 1.1);";
+        }
+    }//GEN-LAST:event_jComboBoxAccessHWActionPerformed
+
+    private void jButtonRunMySQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRunMySQLActionPerformed
+        // TODO add your handling code here:
+        this.RunMySQLQuery(Query);
+        if (this.jTextAreaResultHW5Access.getText() != "") {
+            this.jTextAreaResultHW5Access.setText("");
+        }
+        for (int i = 0; i < Result.size(); i++) {
+            this.jTextAreaResultHW5Access.append(Result.get(i) + "\n");
+        }
+    }//GEN-LAST:event_jButtonRunMySQLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -500,10 +625,13 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAccesRun;
+    private javax.swing.JButton jButtonRunMySQL;
+    private javax.swing.JComboBox jComboBoxAccessHW;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -516,12 +644,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaResultHW5Access;
     private javax.swing.JTextArea jTextAreaResults;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -532,5 +663,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFROM;
     private javax.swing.JTextField jTextFieldSELECT;
     private javax.swing.JTextField jTextFieldWHERE;
+    private javax.swing.JToggleButton jToggleButtonRunAccessAssignment;
     // End of variables declaration//GEN-END:variables
 }

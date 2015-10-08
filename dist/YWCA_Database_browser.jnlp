@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="YWCA_Database.jar" size="700954" download="eager" />
+    <jar href="YWCA_Database.jar" size="2632315" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="ywca_database.Login"  name="YWCA_Database" >
   </applet-desc>
