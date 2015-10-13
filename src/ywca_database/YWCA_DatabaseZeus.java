@@ -37,15 +37,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         Result.add(result);
     }
 
-    public void RunMySQLQuery(String Query) {
+    public void RunSQLSrvrQuery(String Query) {
         try {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Connection MySQLDB;
-            MySQLDB = DriverManager.getConnection(
+            Connection SQLSrvr;
+            SQLSrvr = DriverManager.getConnection(
                     "jdbc:odbc:Driver={SQL Server};"
-                    + "Server=KYLELAPTOP\\SQLEXPRESS;Database=Northwind;Trusted_Connection=yes;");
+                    + "Server=CS1;Database=Northwind;Trusted_Connection=yes;");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            SQL_Access.viewTable(MySQLDB, Query);
+            SQL_Access.viewTable(SQLSrvr, Query);
         } catch (SQLException ex) {
             Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -59,8 +59,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             //DBQ=<path to db>
             //UID = Admin or username
             //PWD= <blank> or password
-            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;"
-                    + "C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin;PWD=;";
+            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=Y:\\374\\Northwind.accdb;UID = Admin; PWD =;";
             accessDB = DriverManager.getConnection(database, "", "");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             SQL_Access.viewTable(accessDB, Query);
@@ -575,7 +574,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     private void jButtonRunMySQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRunMySQLActionPerformed
         // TODO add your handling code here:
-        this.RunMySQLQuery(Query);
+        this.RunSQLSrvrQuery(Query);
         if (this.jTextAreaResultHW5Access.getText() != "") {
             this.jTextAreaResultHW5Access.setText("");
         }
