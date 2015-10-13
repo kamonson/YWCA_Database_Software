@@ -59,7 +59,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             //DBQ=<path to db>
             //UID = Admin or username
             //PWD= <blank> or password
-            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=Y:\\374\\Northwind.accdb;UID = Admin; PWD =;";
+            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;";
             accessDB = DriverManager.getConnection(database, "", "");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             SQL_Access.viewTable(accessDB, Query);
@@ -406,7 +406,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jTabbedPane6.addTab("SQL Access", jPanel4);
 
-        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HW 5.1", "HW 5.2", "HW 5.3", "HW 5.4", "HW 5.5" }));
+        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HW 5.1", "HW 5.2", "HW 5.3", "HW 5.4", "HW 5.5", "HW 5.6", "HW 5.7", "HW 5.8", "HW 5.9", "HW 5.10" }));
         jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxAccessHWActionPerformed(evt);
@@ -566,9 +566,35 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.Query = "";
         if (this.jComboBoxAccessHW.getSelectedIndex() == 0) {
             this.Query
-                    = "SELECT p.[Product Name], (p.[List Price] * 1.1)  AS \"10%_More\" "
-                    + "FROM Products p "
-                    + "Group By p.[Product Name],  (p.[List Price] * 1.1);";
+                    = "SELECT p.[Product Name], (p.[List Price] * 1.1)  AS \"10%_More\" FROM Products p Group By p.[Product Name],  (p.[List Price] * 1.1);";
+            
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 1) {
+            this.Query
+                    = "SELECT p.[Product Name], Min(p.[List Price]) AS \"Price Min\", Max(p.[List Price]) AS \"Price Max\", AVG(p.[List Price]) AS \"Price AVG\" FROM Products p GROUP BY p.[Product Name];";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 2) {
+            this.Query
+                    = "SELECT p.[Product Name] AS \"Discontinued Products\" FROM Products p WHERE p.Discontinued = 1;";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 3) {
+            this.Query
+                    = "SELECT  p.[Product Name] FROM Products p WHERE p.[Product Name] LIKE \"Northwind Traders Dried *\";";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 4) {
+            this.Query
+                    = "SELECT  p.[Product Name] FROM Products p WHERE p.Category LIKE \"Beverages\" AND p.Discontinued <> 1;";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 5) {
+            this.Query
+                    = "SELECT  DISTINCT s.Company AS \"Companies with fees over $100\" FROM Orders o, Shippers s WHERE o.[Shipper ID] = s.ID AND o.[Shipping Fee] > 100;";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 6) {
+            this.Query
+                    = "SELECT (e.[First Name] + ' ' + e.[Last Name]) AS Employee, e.[Job Title] From Employees e;";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 7) {
+            this.Query
+                    = "SELECT o.[Shipped Date], e.[First Name] + \" \" + e.[Last Name] AS Employee FROM Orders o LEFT OUTER JOIN Employees e  ON o.[Employee ID] = e.[ID] ORDER BY o.[Shipped Date] DESC, e.[First Name] + \" \" + e.[Last Name];";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 8) {
+            this.Query
+                    = "SELECT MAX(p.[List Price]) AS \"Max Price\", MIN(p.[List Price]) AS \"Min Price\", AVG(p.[List Price])  AS \"AVG Price\" FROM Products p;";
+        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 9) {
+            this.Query
+                    = "SELECT p.[Category], MAX(p.[List Price]) AS \"Max Price\", MIN(p.[List Price]) AS \"Min Price\", AVG(p.[List Price])  AS \"AVG Price\" FROM Products p GROUP BY p.[Category];";
         }
     }//GEN-LAST:event_jComboBoxAccessHWActionPerformed
 
