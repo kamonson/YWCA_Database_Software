@@ -5,6 +5,13 @@
  */
 package ywca_database;
 
+import java.awt.event.KeyEvent;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -32,7 +39,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private String select = "select ";
     private String from = " from ";
     private String where = " where ";
-    private static ArrayList <String> Result = new ArrayList<>();
+    private static ArrayList<String> Result = new ArrayList<>();
 
     public static void QueryResults(String result) {
 
@@ -47,9 +54,8 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                     "jdbc:odbc:Driver={SQL Server};"
                     + "Server=CS1;Database=Northwind;Trusted_Connection=yes;");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
-                       
-            this.passNum = passNum;  
+
+            this.passNum = passNum;
             SQL_Access.viewTable(SQLSrvr, Query, this.passNum);
         } catch (SQLException ex) {
             Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
@@ -64,10 +70,24 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             //DBQ=<path to db>
             //UID = Admin or username
             //PWD= <blank> or password
-            String database = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\Kyle\\Documents\\GitHub\\YWCA_Database_Software\\src\\ywca_database\\UseSQL\\Northwind.accdb;UID = Admin; PWD =;";
+            String DBQ = "";
+
+            try {
+                InputStream DBLoc = new FileInputStream("locationData.txt");
+
+                java.util.Scanner s = new java.util.Scanner(DBLoc).useDelimiter("\\A");
+                DBQ = s.hasNext() ? s.next() : "";
+
+            } catch (IOException ex) {
+                System.out.print("Check and make sure you use the DBLocation tab");
+            }
+
+            String UID = "Admin";
+            String PWD = ";";
+            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\YWCADB.accdb;UID =%s; PWD =%s", DBQ, UID, PWD);
             accessDB = DriverManager.getConnection(database, "", "");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            this.passNum = passNum;  
+            this.passNum = passNum;
             SQL_Access.viewTable(accessDB, Query, this.passNum);
         } catch (SQLException ex) {
             Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
@@ -119,7 +139,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaResults = new javax.swing.JTextArea();
-        jButton4 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jComboBoxAccessHW = new javax.swing.JComboBox();
         jToggleButtonRunAccessAssignment = new javax.swing.JToggleButton();
@@ -130,16 +149,26 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("Path eg:  Z:\\DatabaseLocation");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
-        jLabel1.setText("Person To Look Up");
+        jLabel1.setText("Database Destination Path");
 
-        jButton1.setText("Run Report");
+        jButton1.setText("Change Path");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -358,13 +387,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jTextAreaResults.setRows(5);
         jScrollPane2.setViewportView(jTextAreaResults);
 
-        jButton4.setText("jButton4");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -389,20 +411,16 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jButton4))
+                .addComponent(jLabel9)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -517,6 +535,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String locationData = "locationData.txt";
+        String location = this.jTextField1.getText();
+        byte[] arrByte = location.getBytes();
+        try (OutputStream out = new BufferedOutputStream(new FileOutputStream(locationData), 1024)) {
+            out.write(arrByte);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.jLabel1.setText("Changed!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -546,7 +573,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.passNum = 0;
         Pattern p = Pattern.compile(",");
         Matcher m = p.matcher(in);
-        while (m.find())passNum ++;
+        while (m.find()) {
+            passNum++;
+        }
         if (this.jTextFieldFROM.getText().length() < 1) {
             this.from = "";
         } else {
@@ -592,43 +621,43 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         if (this.jComboBoxAccessHW.getSelectedIndex() == 0) {
             this.Query
                     = "SELECT p.[Product Name], (p.[List Price] * 1.1)  AS \"10%_More\" FROM Products p Group By p.[Product Name],  (p.[List Price] * 1.1);";
-                    this.passNum = 1;
+            this.passNum = 1;
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 1) {
             this.Query
                     = "SELECT p.[Product Name], Min(p.[List Price]) AS \"Price Min\", Max(p.[List Price]) AS \"Price Max\", AVG(p.[List Price]) AS \"Price AVG\" FROM Products p GROUP BY p.[Product Name];";
-       this.passNum = 3;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 2) {
+            this.passNum = 3;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 2) {
             this.Query
                     = "SELECT p.[Product Name] AS \"Discontinued Products\" FROM Products p WHERE p.Discontinued = 1;";
-        this.passNum = 0;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 3) {
+            this.passNum = 0;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 3) {
             this.Query
                     = "SELECT  p.[Product Name] FROM Products p WHERE p.[Product Name] LIKE 'Northwind Traders Dried *';";
-       this.passNum = 1;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 4) {
+            this.passNum = 1;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 4) {
             this.Query
                     = "SELECT  p.[Product Name] FROM Products p WHERE p.Category LIKE 'Beverages' AND p.Discontinued <> 1;";
-        this.passNum = 0;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 5) {
+            this.passNum = 0;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 5) {
             this.Query
                     = "SELECT  DISTINCT s.Company AS 'Companies with fees over $100' FROM Orders o, Shippers s WHERE o.[Shipper ID] = s.ID AND o.[Shipping Fee] > 100;";
-        this.passNum = 0;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 6) {
+            this.passNum = 0;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 6) {
             this.Query
                     = "SELECT (e.[First Name] + ' ' + e.[Last Name]) AS Employee, e.[Job Title] From Employees e;";
-        this.passNum =1;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 7) {
+            this.passNum = 1;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 7) {
             this.Query
                     = "SELECT o.[Shipped Date], e.[First Name] + ' ' + e.[Last Name] AS Employee FROM Orders o LEFT OUTER JOIN Employees e  ON o.[Employee ID] = e.[ID] ORDER BY o.[Shipped Date] DESC, e.[First Name] + ' ' + e.[Last Name];";
-        this.passNum = 1;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 8) {
+            this.passNum = 1;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 8) {
             this.Query
                     = "SELECT MAX(p.[List Price]) AS \"Max Price\", MIN(p.[List Price]) AS \"Min Price\", AVG(p.[List Price])  AS \"AVG Price\" FROM Products p;";
-        this.passNum = 2;
-        }else if (this.jComboBoxAccessHW.getSelectedIndex() == 9) {
+            this.passNum = 2;
+        } else if (this.jComboBoxAccessHW.getSelectedIndex() == 9) {
             this.Query
                     = "SELECT p.[Category], MAX(p.[List Price]) AS \"Max Price\", MIN(p.[List Price]) AS \"Min Price\", AVG(p.[List Price])  AS \"AVG Price\" FROM Products p GROUP BY p.[Category];";
-        this.passNum = 3;
+            this.passNum = 3;
         }
     }//GEN-LAST:event_jComboBoxAccessHWActionPerformed
 
@@ -643,9 +672,18 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonRunMySQLActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        if (KeyEvent.VK_ENTER != evt.getKeyCode()) {
+        } else {
+        this.jButton1ActionPerformed(null);}
+    
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField1FocusGained
 
     /**
      * @param args the command line arguments
@@ -687,7 +725,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAccesRun;
     private javax.swing.JButton jButtonRunMySQL;
     private javax.swing.JComboBox jComboBoxAccessHW;

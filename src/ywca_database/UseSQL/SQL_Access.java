@@ -39,13 +39,18 @@ public class SQL_Access {
             SQL_Access.Query = Query;
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(SQL_Access.Query);
-            String pass;
+            String pass = "";
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int cCount = rsmd.getColumnCount();
+            for (int i = 1; i <= cCount; i++){pass += rsmd.getColumnName(i); pass += "\t\t";}
+            System.out.println(pass);
+                    YWCA_DatabaseZeus.QueryResults(pass);
             while (rs.next()) {
                 //needs to be dynamic to results
+                pass = "";
                 for (int i = 1; i < passNum+2; i++) {
-                    pass = rs.getString(i);
-                    System.out.println(pass);
-                    YWCA_DatabaseZeus.QueryResults(pass);
+                    pass += rs.getString(i);
+                    pass += "\t\t";
 //                pass = rs.getString(2);
 //                System.out.println(pass);
 //                YWCA_DatabaseZeus.QueryResults(pass);
@@ -65,6 +70,8 @@ public class SQL_Access {
 //                System.out.println(pass);
 //                YWCA_DatabaseZeus.QueryResults(pass);
                 }
+                    System.out.println(pass);
+                    YWCA_DatabaseZeus.QueryResults(pass);
             }
             rs.close();
             stmt.close();
