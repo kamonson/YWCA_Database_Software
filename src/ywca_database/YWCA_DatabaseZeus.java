@@ -16,10 +16,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import org.omg.CORBA.Object;
 import ywca_database.UseSQL.SQL_Access;
 
 /**
@@ -40,10 +45,15 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private String from = " from ";
     private String where = " where ";
     private static ArrayList<String> Result = new ArrayList<>();
+    private static ArrayList<String> ResultHeadings = new ArrayList<>();
+    private static ArrayList<String> cells = new ArrayList<>();
 
     public static void QueryResults(String result) {
-
         Result.add(result);
+        List<String> rows = Arrays.asList(result.split(",,,NC,,,"));
+        for (int i = 0; i < rows.size(); i++) {
+            cells.add(rows.get(i));
+        }
     }
 
     public void RunSQLSrvrQuery(String Query, int passNum) {
@@ -84,7 +94,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
             String UID = "Admin";
             String PWD = ";";
-            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\YWCADB.accdb;UID =%s; PWD =%s", DBQ, UID, PWD);
+            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\10 ADVP - Database - Counseling & Legal.mdb;UID =%s; PWD =%s", DBQ, UID, PWD);
             accessDB = DriverManager.getConnection(database, "", "");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             this.passNum = passNum;
@@ -103,6 +113,8 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
@@ -127,6 +139,14 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jButton3 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jComboBoxAccessHW = new javax.swing.JComboBox();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaResultHW5Access = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        jButtonRunMySQL = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jButtonAccesRun = new javax.swing.JButton();
@@ -139,13 +159,21 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaResults = new javax.swing.JTextArea();
-        jPanel5 = new javax.swing.JPanel();
-        jComboBoxAccessHW = new javax.swing.JComboBox();
-        jToggleButtonRunAccessAssignment = new javax.swing.JToggleButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextAreaResultHW5Access = new javax.swing.JTextArea();
-        jLabel13 = new javax.swing.JLabel();
-        jButtonRunMySQL = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -197,12 +225,12 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 569, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 786, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
 
-        jTabbedPane6.addTab("Report 1", jPanel1);
+        jTabbedPane6.addTab("DB Path", jPanel1);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -277,7 +305,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 548, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -343,11 +371,81 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 459, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 676, Short.MAX_VALUE)
                 .addComponent(jButton3))
         );
 
         jTabbedPane6.addTab("Add User", jPanel3);
+
+        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HW 5.1", "HW 5.2", "HW 5.3", "HW 5.4", "HW 5.5", "HW 5.6", "HW 5.7", "HW 5.8", "HW 5.9", "HW 5.10" }));
+        jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxAccessHWActionPerformed(evt);
+            }
+        });
+
+        jTextAreaResultHW5Access.setColumns(20);
+        jTextAreaResultHW5Access.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaResultHW5Access);
+
+        jLabel13.setText("Result:");
+
+        jButtonRunMySQL.setText("Run");
+        jButtonRunMySQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRunMySQLActionPerformed(evt);
+            }
+        });
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable2);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonRunMySQL)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonRunMySQL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane6.addTab("HW5 1-5", jPanel5);
 
         jLabel9.setFont(new java.awt.Font("AR BONNIE", 1, 36)); // NOI18N
         jLabel9.setText("Query ");
@@ -387,6 +485,21 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jTextAreaResults.setRows(5);
         jScrollPane2.setViewportView(jTextAreaResults);
 
+        jTable3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable3.setToolTipText("");
+        jScrollPane6.setViewportView(jTable3);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -403,18 +516,24 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonAccesRun))
                             .addComponent(jTextFieldFROM)
-                            .addComponent(jTextFieldWHERE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE))
+                            .addComponent(jTextFieldWHERE))
                         .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel9))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(369, 369, 369)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonAccesRun)
+                        .addGap(175, 175, 175))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,79 +553,17 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                     .addComponent(jTextFieldWHERE, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel12)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAccesRun)
                 .addContainerGap())
         );
 
         jTabbedPane6.addTab("SQL Access", jPanel4);
-
-        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HW 5.1", "HW 5.2", "HW 5.3", "HW 5.4", "HW 5.5", "HW 5.6", "HW 5.7", "HW 5.8", "HW 5.9", "HW 5.10" }));
-        jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxAccessHWActionPerformed(evt);
-            }
-        });
-
-        jToggleButtonRunAccessAssignment.setText("Run Access");
-        jToggleButtonRunAccessAssignment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonRunAccessAssignmentActionPerformed(evt);
-            }
-        });
-
-        jTextAreaResultHW5Access.setColumns(20);
-        jTextAreaResultHW5Access.setRows(5);
-        jScrollPane3.setViewportView(jTextAreaResultHW5Access);
-
-        jLabel13.setText("Result:");
-
-        jButtonRunMySQL.setText("Run MySQL");
-        jButtonRunMySQL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRunMySQLActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButtonRunAccessAssignment)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonRunMySQL)))
-                        .addGap(0, 372, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButtonRunAccessAssignment)
-                    .addComponent(jButtonRunMySQL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane6.addTab("HW5 1-5", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -588,12 +645,51 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         }
         this.Query = this.select + this.from + this.where + ";";
         this.RunAccessQuery(Query, passNum);
-        if (this.jTextAreaResults.getText() != "") {
-            this.jTextAreaResults.setText("");
-        }
+        this.jTextAreaResults.setText("");
         for (int i = 0; i < Result.size(); i++) {
             this.jTextAreaResults.append(Result.get(i) + "\n");
         }
+
+        if (this.jTextFieldSELECT.getText().length() < 1) {
+            this.select = "";
+        } else {
+            this.select += this.jTextFieldSELECT.getText();
+        }
+
+        String cin = Result.get(0);
+        List<String> items = Arrays.asList(cin.split(",,,NC,,,"));
+
+        for (int r = 0; r < items.size(); r++) {
+            ResultHeadings.add(items.get(r));
+        }
+        Result.remove(0);
+
+        //Make Column titles
+        DefaultTableModel tableModel = new DefaultTableModel();
+
+        for (String columnName : ResultHeadings) {
+            tableModel.addColumn(columnName);
+        }
+        int k = 0;
+        ArrayList<String[]> rowArray = new ArrayList();
+        String[] rows = new String[ResultHeadings.size()];
+        for (int r = 0; r < Result.size() / ResultHeadings.size(); r++) {
+            for (int i = 0; i < rows.length; i++) {
+                rows[i] = cells.get(i);
+            }
+            rowArray.add(rows);
+        }
+
+        for (int i = 0; i < rowArray.size(); i++) {
+            tableModel.addRow(rowArray.get(i));
+        }
+        jTable3.setModel(tableModel);
+
+        DefaultTableModel tableModel1 = new DefaultTableModel();
+        this.jTable3.setModel(tableModel);
+
+        //Add rows
+        Result.clear();
     }//GEN-LAST:event_jButtonAccesRunActionPerformed
 
     private void jTextFieldSELECTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSELECTActionPerformed
@@ -604,23 +700,14 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldWHEREActionPerformed
 
-    private void jToggleButtonRunAccessAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRunAccessAssignmentActionPerformed
-        // TODO add your handling code here:
-        this.RunAccessQuery(Query, this.passNum);
-        if (this.jTextAreaResultHW5Access.getText() != "") {
-            this.jTextAreaResultHW5Access.setText("");
-        }
-        for (int i = 0; i < Result.size(); i++) {
-            this.jTextAreaResultHW5Access.append(Result.get(i) + "\n");
-        }
-    }//GEN-LAST:event_jToggleButtonRunAccessAssignmentActionPerformed
-
     private void jComboBoxAccessHWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAccessHWActionPerformed
         // TODO add your handling code here:
         this.Query = "";
         if (this.jComboBoxAccessHW.getSelectedIndex() == 0) {
             this.Query
-                    = "SELECT p.[Product Name], (p.[List Price] * 1.1)  AS \"10%_More\" FROM Products p Group By p.[Product Name],  (p.[List Price] * 1.1);";
+//                    = "SELECT [Dated Intake].Date, [Dated Intake].[Adult 1 Disability], [Dated Intake].[Adult 1 Disability 1], [Dated Intake].[Child 3 Disability], [Dated Intake].[Child 1 Disability], [Dated Intake].[Child 2 Disability], [Dated Intake].[Child 4 Disability], [Dated Intake].[Child 5 Disability], [Dated Intake].[Are you disabled?]\n"
+//                    + "FROM [Dated Intake];";
+                    ="SELECT * FROM Groups";
             this.passNum = 1;
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 1) {
             this.Query
@@ -663,21 +750,59 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     private void jButtonRunMySQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRunMySQLActionPerformed
         // TODO add your handling code here:
-        this.RunSQLSrvrQuery(Query, this.passNum);
+        this.RunAccessQuery(Query, this.passNum);
         if (this.jTextAreaResultHW5Access.getText() != "") {
             this.jTextAreaResultHW5Access.setText("");
         }
         for (int i = 0; i < Result.size(); i++) {
             this.jTextAreaResultHW5Access.append(Result.get(i) + "\n");
         }
+        
+        
+          String cin = Result.get(0);
+        List<String> items = Arrays.asList(cin.split(",,,NC,,,"));
+
+        for (int r = 0; r < items.size(); r++) {
+            ResultHeadings.add(items.get(r));
+        }
+        Result.remove(0);
+
+        //Make Column titles
+        DefaultTableModel tableModel = new DefaultTableModel();
+
+        for (String columnName : ResultHeadings) {
+            tableModel.addColumn(columnName);
+        }
+        int k = 0;
+        ArrayList<String[]> rowArray = new ArrayList();
+        String[] rows = new String[ResultHeadings.size()];
+        for (int r = 0; r < Result.size() /*/ ResultHeadings.size()*/; r++) {
+            for (int i = 0; i < rows.length; i++) {
+                rows[i] = cells.get(i);
+            }
+            rowArray.add(rows);
+        }
+
+        for (int i = 0; i < rowArray.size(); i++) {
+            tableModel.addRow(rowArray.get(i));
+        }
+        jTable2.setModel(tableModel);
+
+        DefaultTableModel tableModel1 = new DefaultTableModel();
+        this.jTable2.setModel(tableModel);
+
+        //Add rows
+        Result.clear();
+        
     }//GEN-LAST:event_jButtonRunMySQLActionPerformed
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         // TODO add your handling code here:
         if (KeyEvent.VK_ENTER != evt.getKeyCode()) {
         } else {
-        this.jButton1ActionPerformed(null);}
-    
+            this.jButton1ActionPerformed(null);
+        }
+
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
@@ -751,7 +876,13 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane6;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextAreaResultHW5Access;
     private javax.swing.JTextArea jTextAreaResults;
@@ -764,6 +895,5 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFROM;
     private javax.swing.JTextField jTextFieldSELECT;
     private javax.swing.JTextField jTextFieldWHERE;
-    private javax.swing.JToggleButton jToggleButtonRunAccessAssignment;
     // End of variables declaration//GEN-END:variables
 }
