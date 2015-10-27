@@ -6,6 +6,8 @@
 package ywca_database.UseSQL;
 
 import java.sql.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import ywca_database.YWCA_DatabaseZeus;
 
 /**
@@ -15,7 +17,6 @@ import ywca_database.YWCA_DatabaseZeus;
 public class SQL_Access {
 
     private static String Query;
-    private static String Result;
 
     public static void viewTable(Connection con, String Query, int passNum)
             throws SQLException {
@@ -26,19 +27,20 @@ public class SQL_Access {
             String pass = "";
             ResultSetMetaData rsmd = rs.getMetaData();
             int cCount = rsmd.getColumnCount();
-            for (int i = 1; i <= cCount; i++){
-                pass += rsmd.getColumnName(i); pass += " ,,,NC,,, ";}
+            for (int i = 1; i <= cCount; i++) {
+                pass += rsmd.getColumnName(i);
+                pass += " ,,,NC,,, ";
+            }
             System.out.println(pass);
-                    YWCA_DatabaseZeus.QueryResults(pass);
+            YWCA_DatabaseZeus.QueryResults(pass);
             while (rs.next()) {
-                //needs to be dynamic to results
                 pass = "";
-                for (int i = 1; i < passNum+2; i++) {
+                for (int i = 1; i < passNum + 2; i++) {
                     pass += rs.getString(i);
                     pass += " ,,,NC,,, ";
                 }
-                    System.out.println(pass);
-                    YWCA_DatabaseZeus.QueryResults(pass);
+                System.out.println(pass);
+                YWCA_DatabaseZeus.QueryResults(pass);
             }
             rs.close();
             stmt.close();
