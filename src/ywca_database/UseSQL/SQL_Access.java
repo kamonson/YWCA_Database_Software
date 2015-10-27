@@ -17,7 +17,6 @@ import ywca_database.YWCA_DatabaseZeus;
 public class SQL_Access {
 
     private static String Query;
-    private static String Result;
 
     public static void viewTable(Connection con, String Query, int passNum)
             throws SQLException {
@@ -28,12 +27,6 @@ public class SQL_Access {
             String pass = "";
             ResultSetMetaData rsmd = rs.getMetaData();
             int cCount = rsmd.getColumnCount();
-//            String in = Query;
-//        Pattern p = Pattern.compile("*");
-//        Matcher m = p.matcher(in);
-//        while (m.find()) {
-//            passNum= cCount -2;
-//        }
             for (int i = 1; i <= cCount; i++) {
                 pass += rsmd.getColumnName(i);
                 pass += " ,,,NC,,, ";
@@ -41,7 +34,6 @@ public class SQL_Access {
             System.out.println(pass);
             YWCA_DatabaseZeus.QueryResults(pass);
             while (rs.next()) {
-                //needs to be dynamic to results
                 pass = "";
                 for (int i = 1; i < passNum + 2; i++) {
                     pass += rs.getString(i);

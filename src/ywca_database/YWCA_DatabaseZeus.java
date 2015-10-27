@@ -238,6 +238,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         Reports = new javax.swing.JPanel();
         jComboBoxAccessHW = new javax.swing.JComboBox();
@@ -246,7 +247,19 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         Ericas = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        Groups = new javax.swing.JPanel();
+        Isabellas = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        Isabellas_Unduplicated = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        Support_Groups = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        Support_Groups_Unduplicated = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        Month_Groups = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        BtnGroups = new javax.swing.JButton();
+        Counseling = new javax.swing.JPanel();
         Teri_Intakes = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Emma_Intakes = new javax.swing.JTextField();
@@ -308,9 +321,20 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable1);
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Report 1", "Counseling_2015" }));
+        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Groups", "Counseling_2015" }));
         jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxAccessHWActionPerformed(evt);
@@ -371,11 +395,100 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                     .addComponent(jComboBoxAccessHW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRunMySQL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane6.addTab("Reports", Reports);
+
+        Isabellas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IsabellasActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Isabellas");
+
+        Isabellas_Unduplicated.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Isabellas_UnduplicatedActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Isabellas_Unduplicated");
+
+        jLabel21.setText("Support Groups");
+
+        Support_Groups_Unduplicated.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Support_Groups_UnduplicatedActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Support Groups Unduplicated");
+
+        jLabel23.setText("Month");
+
+        BtnGroups.setText("Modify Groups");
+        BtnGroups.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGroupsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout GroupsLayout = new javax.swing.GroupLayout(Groups);
+        Groups.setLayout(GroupsLayout);
+        GroupsLayout.setHorizontalGroup(
+            GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GroupsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Isabellas, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel23)
+                    .addComponent(Support_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(Support_Groups_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                        .addComponent(Isabellas_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(Month_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(363, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GroupsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnGroups, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+        );
+        GroupsLayout.setVerticalGroup(
+            GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GroupsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Isabellas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Isabellas_Unduplicated, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Support_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Support_Groups_Unduplicated, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Month_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
+                .addComponent(BtnGroups)
+                .addGap(58, 58, 58))
+        );
+
+        jTabbedPane1.addTab("Groups_Update", Groups);
 
         Teri_Intakes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,26 +516,33 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jLabel18.setText("Month");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jButton2.setText("Modify Counseling Form");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CounselingLayout = new javax.swing.GroupLayout(Counseling);
+        Counseling.setLayout(CounselingLayout);
+        CounselingLayout.setHorizontalGroup(
+            CounselingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CounselingLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(CounselingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CounselingLayout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CounselingLayout.createSequentialGroup()
+                        .addGroup(CounselingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Teri_OnGoing)
                             .addComponent(Teri_Intakes)
                             .addComponent(Emma_Intakes)
                             .addComponent(Melva_Intakes, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Emma_OnGoing)
                             .addComponent(Melva_OnGoing)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CounselingLayout.createSequentialGroup()
+                                .addGroup(CounselingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
@@ -438,10 +558,14 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                             .addComponent(Melva_Walkins)
                             .addComponent(Month))
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CounselingLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(26, 26, 26))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        CounselingLayout.setVerticalGroup(
+            CounselingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CounselingLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Teri_Intakes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -482,17 +606,12 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Counseling_Update", jPanel1);
-
-        jButton2.setText("Modify Counseling Form");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jTabbedPane1.addTab("Counseling_Update", Counseling);
 
         javax.swing.GroupLayout EricasLayout = new javax.swing.GroupLayout(Ericas);
         Ericas.setLayout(EricasLayout);
@@ -501,17 +620,13 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             .addGroup(EricasLayout.createSequentialGroup()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EricasLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2))
         );
         EricasLayout.setVerticalGroup(
             EricasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EricasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jTabbedPane1)
-                .addGap(12, 12, 12)
-                .addComponent(jButton2))
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane6.addTab("Erica's Forms", Ericas);
@@ -629,7 +744,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonAccesRun)
                 .addContainerGap())
@@ -696,7 +811,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 676, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 648, Short.MAX_VALUE)
                 .addComponent(jButton3))
         );
 
@@ -750,7 +865,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 786, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 758, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -771,7 +886,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane6)
-                .addContainerGap())
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -829,8 +944,8 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
          */
         this.Query = "";
         if (this.jComboBoxAccessHW.getSelectedIndex() == 0) {
-            this.select = "SELECT Intake.[Abuser's Name]" + " ";
-            this.from = "FROM Intake" + " ";
+            this.select = "SELECT Month, Isabellas, Isabellas_Unduplicated, Support_Groups, Support_Groups_Unduplicated" + " ";
+            this.from = "FROM Groups" + " ";
             this.where = "";
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 1) {
             this.select = "SELECT Month, Teri_Intakes, Emma_Intakes, Melva_Intakes, Teri_OnGoing, Emma_OnGoing, Melva_OnGoing, Teri_Walkins, Emma_Walkins, Melva_Walkins" + " ";
@@ -967,6 +1082,69 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Teri_IntakesActionPerformed
 
+    private void IsabellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsabellasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IsabellasActionPerformed
+
+    private void Isabellas_UnduplicatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Isabellas_UnduplicatedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Isabellas_UnduplicatedActionPerformed
+
+    private void Support_Groups_UnduplicatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Support_Groups_UnduplicatedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Support_Groups_UnduplicatedActionPerformed
+
+    private void BtnGroupsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGroupsActionPerformed
+        //Run Groups mod
+        String Update = "UPDATE Groups SET";
+        String Where = "";
+        if (!"".equals(this.Isabellas.getText())) {
+            String Isabellas = " Isabellas = " + this.Isabellas.getText() + ",";
+            Update += Isabellas;
+        }
+
+        if (!"".equals(this.Isabellas_Unduplicated.getText())) {
+            String Isabellas_Unduplicated = " Isabellas_Unduplicated = " + this.Isabellas_Unduplicated.getText() + ",";
+            Update += Isabellas_Unduplicated;
+        }
+
+        if (!"".equals(this.Support_Groups.getText())) {
+            String Support_Groups = " Support_Groups = " + this.Support_Groups.getText() + ",";
+            Update += Support_Groups;
+        }
+
+        if (!"".equals(this.Support_Groups_Unduplicated.getText())) {
+            String Support_Groups_Unduplicated = " Support_Groups_Unduplicated = " + this.Support_Groups_Unduplicated.getText() + ",";
+            Update += Support_Groups_Unduplicated;
+        }
+
+        if (Update.endsWith(",")) {
+            String substring = Update.substring(0, Update.length() - 1);
+            Update = substring;
+        }
+
+        if (!"".equals(this.Month_Groups.getText())) {
+            String Month_Groups = this.Month_Groups.getText();
+            Where = " Where month = " + "'" + Month_Groups + "'";
+        }
+        this.select = Update;
+        this.from = Where;
+
+        this.ModBabyMod();
+
+        //switch to reports and view changes
+        this.jComboBoxAccessHW.setSelectedIndex(0);
+        this.jTabbedPane6.setSelectedIndex(0);
+        this.jComboBoxAccessHWActionPerformed(evt);
+        this.GoBabyGo(jTable2);
+
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_BtnGroupsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1004,17 +1182,25 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnGroups;
+    private javax.swing.JPanel Counseling;
     private javax.swing.JPanel DBPath;
     private javax.swing.JTextField Emma_Intakes;
     private javax.swing.JTextField Emma_OnGoing;
     private javax.swing.JTextField Emma_Walkins;
     private javax.swing.JPanel Ericas;
+    private javax.swing.JPanel Groups;
+    private javax.swing.JTextField Isabellas;
+    private javax.swing.JTextField Isabellas_Unduplicated;
     private javax.swing.JTextField Melva_Intakes;
     private javax.swing.JTextField Melva_OnGoing;
     private javax.swing.JTextField Melva_Walkins;
     private javax.swing.JTextField Month;
+    private javax.swing.JTextField Month_Groups;
     private javax.swing.JPanel Reports;
     private javax.swing.JPanel SQLAccess;
+    private javax.swing.JTextField Support_Groups;
+    private javax.swing.JTextField Support_Groups_Unduplicated;
     private javax.swing.JTextField Teri_Intakes;
     private javax.swing.JTextField Teri_OnGoing;
     private javax.swing.JTextField Teri_Walkins;
@@ -1034,7 +1220,12 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1042,7 +1233,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
