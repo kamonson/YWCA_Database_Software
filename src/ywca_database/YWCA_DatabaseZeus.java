@@ -443,22 +443,24 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             .addGroup(GroupsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Isabellas, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23)
-                    .addComponent(Support_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(Support_Groups_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
-                        .addComponent(Isabellas_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(Month_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(363, Short.MAX_VALUE))
+                    .addComponent(Isabellas)
+                    .addGroup(GroupsLayout.createSequentialGroup()
+                        .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23)
+                            .addComponent(Support_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Support_Groups_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                                .addComponent(Isabellas_Unduplicated, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(Month_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(488, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GroupsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnGroups, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addContainerGap())
         );
         GroupsLayout.setVerticalGroup(
             GroupsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,9 +485,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(Month_Groups, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 504, Short.MAX_VALUE)
                 .addComponent(BtnGroups)
-                .addGap(58, 58, 58))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Groups_Update", Groups);
@@ -606,7 +608,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                 .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -623,10 +625,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         );
         EricasLayout.setVerticalGroup(
             EricasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EricasLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jTabbedPane1)
-                .addGap(30, 30, 30))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane6.addTab("Erica's Forms", Ericas);
