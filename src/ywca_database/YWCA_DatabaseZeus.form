@@ -290,7 +290,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel19">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Isabellas"/>
+                        <Property name="text" type="java.lang.String" value="Isabellas (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Isabellas_Unduplicated">
@@ -376,7 +376,7 @@
                                                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="886" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="648" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="Teri_Walkins" alignment="0" max="32767" attributes="0"/>
                                           <Component id="Emma_Walkins" alignment="0" max="32767" attributes="0"/>
@@ -452,7 +452,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Teri_Intakes"/>
+                        <Property name="text" type="java.lang.String" value="Teri_Intakes (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Emma_Intakes">
@@ -624,7 +624,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Family Law"/>
+                        <Property name="text" type="java.lang.String" value="Family Law (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="WAW_LegalAdvocate">
@@ -890,7 +890,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel32">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Client ID"/>
+                        <Property name="text" type="java.lang.String" value="Client ID (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="HHAA_HOH">

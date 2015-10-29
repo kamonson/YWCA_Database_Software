@@ -465,7 +465,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             }
         });
 
-        jLabel19.setText("Isabellas");
+        jLabel19.setText("Isabellas (leave field blank if no change is needed)");
 
         Isabellas_Unduplicated.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -556,7 +556,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Teri_Intakes");
+        jLabel2.setText("Teri_Intakes (leave field blank if no change is needed)");
 
         jLabel3.setText("Emma_Intakes");
 
@@ -612,7 +612,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel17))
-                                .addGap(0, 886, Short.MAX_VALUE))
+                                .addGap(0, 648, Short.MAX_VALUE))
                             .addComponent(Teri_Walkins)
                             .addComponent(Emma_Walkins)
                             .addComponent(Melva_Walkins)
@@ -679,7 +679,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Family Law");
+        jLabel24.setText("Family Law (leave field blank if no change is needed)");
 
         WAW_LegalAdvocate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -788,7 +788,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("WrapAroundWednesday_Update", jPanel1);
 
-        jLabel32.setText("Client ID");
+        jLabel32.setText("Client ID (leave field blank if no change is needed)");
 
         jLabel33.setText("Relationship to Head of Household");
 
