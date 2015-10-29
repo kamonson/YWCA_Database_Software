@@ -684,9 +684,6 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="WAW_Week">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField2"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel31">
                       <Properties>
