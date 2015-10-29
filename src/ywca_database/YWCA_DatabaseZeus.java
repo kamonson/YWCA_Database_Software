@@ -300,43 +300,43 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         WAW_Week = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        HHAA_ClientID = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        HHAA_HOH = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        HHAA_NumCaseMembers = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        HHAA_DOB = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        HHAA_DOBQuality = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        HHAA_Race = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        HHAA_Ethnicity = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        HHAA_Gender = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        HHAA_Veteran = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        HHAA_DisablingCondition = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        HHAA_PriorResidence = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        HHAA_LengthStay = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        HHAA_HousingAtEntry = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
+        HHAA_EnrollDate = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        HHAA_ExitDate = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
+        HHAA_Bednights = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
+        HHAA_ExitDestination = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        HHAA_Program = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
+        HHAA_EntranceID = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         BtnHHAA = new javax.swing.JButton();
         SQLAccess = new javax.swing.JPanel();
@@ -788,79 +788,47 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("WrapAroundWednesday_Update", jPanel1);
 
-        jTextField2.setText("jTextField2");
-
         jLabel32.setText("Client ID");
-
-        jTextField3.setText("jTextField3");
 
         jLabel33.setText("Relationship to Head of Household");
 
-        jTextField4.setText("jTextField4");
+        HHAA_NumCaseMembers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HHAA_NumCaseMembersActionPerformed(evt);
+            }
+        });
 
         jLabel34.setText("Number of Case Members");
 
-        jTextField7.setText("jTextField7");
-
         jLabel35.setText("Date of Birth (xx/xx/xxxx)");
-
-        jTextField8.setText("jTextField8");
 
         jLabel36.setText("DOB Quality");
 
-        jTextField9.setText("jTextField9");
-
         jLabel37.setText("Race");
-
-        jTextField10.setText("jTextField10");
 
         jLabel38.setText("Ethnicity");
 
-        jTextField11.setText("jTextField11");
-
         jLabel39.setText("Gender");
-
-        jTextField12.setText("jTextField12");
 
         jLabel40.setText("Veteran (YES / NO)");
 
-        jTextField13.setText("jTextField13");
-
         jLabel41.setText("Disabling Condition (YES / NO)");
-
-        jTextField14.setText("jTextField14");
 
         jLabel42.setText("Prior Residence");
 
-        jTextField15.setText("jTextField15");
-
         jLabel43.setText("Length of Stay (days)");
-
-        jTextField16.setText("jTextField16");
 
         jLabel44.setText("Housing Status at Entry");
 
-        jTextField17.setText("jTextField17");
-
         jLabel45.setText("Enroll Date (xx/xx/xxxx)");
-
-        jTextField18.setText("jTextField18");
 
         jLabel46.setText("Exit Date (xx/xx/xxxx)");
 
-        jTextField19.setText("jTextField19");
-
         jLabel47.setText("Bednights");
-
-        jTextField20.setText("jTextField20");
 
         jLabel48.setText("Destination at Exit");
 
-        jTextField21.setText("jTextField21");
-
         jLabel49.setText("Program");
-
-        jTextField22.setText("jTextField22");
 
         jLabel50.setText("Entrance ID");
 
@@ -897,25 +865,25 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                                     .addComponent(jLabel33)
                                     .addComponent(jLabel32)
                                     .addComponent(jLabel37)))
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
-                            .addComponent(jTextField11)
-                            .addComponent(jTextField12)
-                            .addComponent(jTextField13)
-                            .addComponent(jTextField14)
-                            .addComponent(jTextField15))
+                            .addComponent(HHAA_ClientID)
+                            .addComponent(HHAA_HOH)
+                            .addComponent(HHAA_NumCaseMembers)
+                            .addComponent(HHAA_DOB)
+                            .addComponent(HHAA_DOBQuality)
+                            .addComponent(HHAA_Race)
+                            .addComponent(HHAA_Ethnicity)
+                            .addComponent(HHAA_Gender)
+                            .addComponent(HHAA_Veteran)
+                            .addComponent(HHAA_DisablingCondition)
+                            .addComponent(HHAA_PriorResidence)
+                            .addComponent(HHAA_LengthStay, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(58, 58, 58)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField16, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
-                                    .addComponent(jTextField17)
-                                    .addComponent(jTextField19)
+                                    .addComponent(HHAA_HousingAtEntry)
+                                    .addComponent(HHAA_EnrollDate)
+                                    .addComponent(HHAA_Bednights)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -925,9 +893,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                                             .addComponent(jLabel47)
                                             .addComponent(jLabel46)
                                             .addComponent(jLabel45)))
-                                    .addComponent(jTextField18)
-                                    .addComponent(jTextField20)
-                                    .addComponent(jTextField21)))
+                                    .addComponent(HHAA_ExitDate)
+                                    .addComponent(HHAA_ExitDestination)
+                                    .addComponent(HHAA_Program, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -935,7 +903,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
                                             .addComponent(jLabel50))
-                                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(HHAA_EntranceID, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(BtnHHAA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
@@ -944,78 +912,78 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_ClientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_HousingAtEntry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel44))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_HOH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_EnrollDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
                     .addComponent(jLabel45))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_NumCaseMembers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_ExitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
                     .addComponent(jLabel46))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_Bednights, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(jLabel47))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_DOBQuality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_ExitDestination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
                     .addComponent(jLabel48))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_Race, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_Program, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(jLabel49))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HHAA_Ethnicity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel38)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HHAA_Gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HHAA_Veteran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HHAA_EntranceID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
                     .addComponent(jLabel50))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HHAA_DisablingCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel41)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HHAA_PriorResidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel42)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HHAA_LengthStay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel43)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
@@ -1635,44 +1603,97 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private void BtnHHAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHHAAActionPerformed
         // TODO add your handling code here:
         
-        //Run WAW mod
-        String Update = "UPDATE WrapAroundWednesday SET";
+        //Run HHAA mod
+        String Update = "UPDATE HHAA_BednightsEmployees SET";
         String Where = "";
-        if (!"".equals(this.WAW_FamLaw.getText())) {
-            String WAW_FamLaw = " WAW_FamLaw = " + this.WAW_FamLaw.getText() + ",";
-            Update += WAW_FamLaw;
-            //Should ^^^^^ by WAW_FamLaw (input var) or FamilyLaw(db attribute)
-            //Made all of them input var, change if should be db att
+        if (!"".equals(this.HHAA_ClientID.getText())) {
+            String HHAA_ClientID = " HHAA_ClientID = " + this.HHAA_ClientID.getText() + ",";
+            Update += HHAA_ClientID;
         }
 
-        if (!"".equals(this.WAW_LegalAdvocate.getText())) {
-            String WAW_LegalAdvocate = " WAW_LegalAdvocate = " + this.WAW_LegalAdvocate.getText() + ",";
-            Update += WAW_LegalAdvocate;
+        if (!"".equals(this.HHAA_HOH.getText())) {
+            String HHAA_HOH = " HHAA_HOH = " + this.HHAA_HOH.getText() + ",";
+            Update += HHAA_HOH;
         }
 
-        if (!"".equals(this.WAW_CSOAdvocate.getText())) {
-            String WAW_CSOAdvocate = " WAW_CSOAdvocate = " + this.WAW_CSOAdvocate.getText() + ",";
-            Update += WAW_CSOAdvocate;
+        if (!"".equals(this.HHAA_NumCaseMembers.getText())) {
+            String HHAA_NumCaseMembers = " HHAA_NumCaseMembers = " + this.HHAA_NumCaseMembers.getText() + ",";
+            Update += HHAA_NumCaseMembers;
         }
 
-        if (!"".equals(this.WAW_HousingAdvocate.getText())) {
-            String WAW_HousingAdvocate = " WAW_HousingAdvocate = " + this.WAW_HousingAdvocate.getText() + ",";
-            Update += WAW_HousingAdvocate;
+        if (!"".equals(this.HHAA_DOB.getText())) {
+            String HHAA_DOB = " HHAA_DOB = " + this.HHAA_DOB.getText() + ",";
+            Update += HHAA_DOB;
         }
         
-        if (!"".equals(this.WAW_Counseling.getText())) {
-            String WAW_Counseling = " WAW_Counseling = " + this.WAW_Counseling.getText() + ",";
-            Update += WAW_Counseling;
+        if (!"".equals(this.HHAA_DOBQuality.getText())) {
+            String HHAA_DOBQuality = " HHAA_DOBQuality = " + this.HHAA_DOBQuality.getText() + ",";
+            Update += HHAA_DOBQuality;
         }
         
-        if (!"".equals(this.WAW_ChildAdvocate.getText())) {
-            String WAW_ChildAdvocate = " WAW_ChildAdvocate = " + this.WAW_ChildAdvocate.getText() + ",";
-            Update += WAW_ChildAdvocate;
+        if (!"".equals(this.HHAA_Race.getText())) {
+            String HHAA_Race = " HHAA_Race = " + this.HHAA_Race.getText() + ",";
+            Update += HHAA_Race;
         }
         
-        if (!"".equals(this.WAW_CommunityPartners.getText())) {
-            String WAW_CommunityPartners = " WAW_CommunityPartners = " + this.WAW_CommunityPartners.getText() + ",";
-            Update += WAW_CommunityPartners;
+        if (!"".equals(this.HHAA_Ethnicity.getText())) {
+            String HHAA_Ethnicity = " HHAA_Ethnicity = " + this.HHAA_Ethnicity.getText() + ",";
+            Update += HHAA_Ethnicity;
+        }
+        
+        if (!"".equals(this.HHAA_Gender.getText())) {
+            String HHAA_Gender = " HHAA_Gender = " + this.HHAA_Gender.getText() + ",";
+            Update += HHAA_Gender;
+        }
+        
+        if (!"".equals(this.HHAA_Veteran.getText())) {
+            String HHAA_Veteran = " HHAA_Veteran = " + this.HHAA_Veteran.getText() + ",";
+            Update += HHAA_Veteran;
+        }
+        
+        if (!"".equals(this.HHAA_DisablingCondition.getText())) {
+            String HHAA_DisablingCondition = " HHAA_DisablingCondition = " + this.HHAA_DisablingCondition.getText() + ",";
+            Update += HHAA_DisablingCondition;
+        }
+        
+        if (!"".equals(this.HHAA_PriorResidence.getText())) {
+            String HHAA_PriorResidence = " HHAA_PriorResidence = " + this.HHAA_PriorResidence.getText() + ",";
+            Update += HHAA_PriorResidence;
+        }
+        
+        if (!"".equals(this.HHAA_LengthStay.getText())) {
+            String HHAA_LengthStay = " HHAA_LengthStay = " + this.HHAA_LengthStay.getText() + ",";
+            Update += HHAA_LengthStay;
+        }
+        
+        if (!"".equals(this.HHAA_HousingAtEntry.getText())) {
+            String HHAA_HousingAtEntry = " HHAA_HousingAtEntry = " + this.HHAA_HousingAtEntry.getText() + ",";
+            Update += HHAA_HousingAtEntry;
+        }
+        
+        if (!"".equals(this.HHAA_EnrollDate.getText())) {
+            String HHAA_EnrollDate = " HHAA_EnrollDate = " + this.HHAA_EnrollDate.getText() + ",";
+            Update += HHAA_EnrollDate;
+        }
+        
+        if (!"".equals(this.HHAA_ExitDate.getText())) {
+            String HHAA_ExitDate = " HHAA_ExitDate = " + this.HHAA_ExitDate.getText() + ",";
+            Update += HHAA_ExitDate;
+        }
+        
+        if (!"".equals(this.HHAA_Bednights.getText())) {
+            String HHAA_Bednights = " HHAA_Bednights = " + this.HHAA_Bednights.getText() + ",";
+            Update += HHAA_Bednights;
+        }
+        
+        if (!"".equals(this.HHAA_ExitDestination.getText())) {
+            String HHAA_ExitDestination = " HHAA_ExitDestination = " + this.HHAA_ExitDestination.getText() + ",";
+            Update += HHAA_ExitDestination;
+        }
+        
+        if (!"".equals(this.HHAA_Program.getText())) {
+            String HHAA_Program = " HHAA_Program = " + this.HHAA_Program.getText() + ",";
+            Update += HHAA_Program;
         }
 
         if (Update.endsWith(",")) {
@@ -1680,9 +1701,9 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             Update = substring;
         }
 
-        if (!"".equals(this.WAW_Week.getText())) {
-            String WAW_Week = this.WAW_Week.getText();
-            Where = " Where week = " + "'" + WAW_Week + "'";
+        if (!"".equals(this.HHAA_EntranceID.getText())) {
+            String HHAA_EntranceID = this.HHAA_EntranceID.getText();
+            Where = " Where EntranceID = " + "'" + HHAA_EntranceID + "'";
         }
         this.select = Update;
         this.from = Where;
@@ -1696,6 +1717,10 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.GoBabyGo(jTable2);
 
     }//GEN-LAST:event_BtnHHAAActionPerformed
+
+    private void HHAA_NumCaseMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHAA_NumCaseMembersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HHAA_NumCaseMembersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1744,6 +1769,25 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTextField Emma_Walkins;
     private javax.swing.JPanel Ericas;
     private javax.swing.JPanel Groups;
+    private javax.swing.JTextField HHAA_Bednights;
+    private javax.swing.JTextField HHAA_ClientID;
+    private javax.swing.JTextField HHAA_DOB;
+    private javax.swing.JTextField HHAA_DOBQuality;
+    private javax.swing.JTextField HHAA_DisablingCondition;
+    private javax.swing.JTextField HHAA_EnrollDate;
+    private javax.swing.JTextField HHAA_EntranceID;
+    private javax.swing.JTextField HHAA_Ethnicity;
+    private javax.swing.JTextField HHAA_ExitDate;
+    private javax.swing.JTextField HHAA_ExitDestination;
+    private javax.swing.JTextField HHAA_Gender;
+    private javax.swing.JTextField HHAA_HOH;
+    private javax.swing.JTextField HHAA_HousingAtEntry;
+    private javax.swing.JTextField HHAA_LengthStay;
+    private javax.swing.JTextField HHAA_NumCaseMembers;
+    private javax.swing.JTextField HHAA_PriorResidence;
+    private javax.swing.JTextField HHAA_Program;
+    private javax.swing.JTextField HHAA_Race;
+    private javax.swing.JTextField HHAA_Veteran;
     private javax.swing.JTextField Isabellas;
     private javax.swing.JTextField Isabellas_Unduplicated;
     private javax.swing.JTextField Melva_Intakes;
@@ -1839,27 +1883,8 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTextArea jTextAreaResults;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextFieldFROM;
     private javax.swing.JTextField jTextFieldSELECT;
     private javax.swing.JTextField jTextFieldWHERE;
