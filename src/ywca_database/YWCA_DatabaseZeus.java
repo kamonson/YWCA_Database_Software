@@ -691,8 +691,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             }
         });
 
-        WAW_Week.setText("jTextField2");
-
         jLabel31.setText("Week (xx/xx/xxxx)");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
