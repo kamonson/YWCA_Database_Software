@@ -12,9 +12,12 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="YWCA_Database.jar" size="2798778" download="eager" />
     <jar href="lib/eclipselink.jar" size="8482035" download="eager" />
 =======
+=======
+>>>>>>> master
     <jar href="YWCA_Database.jar" size="2818571" download="eager" />
     <jar href="lib/eclipselink.jar" size="8478776" download="eager" />
 >>>>>>> master
