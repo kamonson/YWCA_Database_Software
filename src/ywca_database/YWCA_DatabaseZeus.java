@@ -371,7 +371,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Groups", "Counseling_2015" }));
+        jComboBoxAccessHW.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Groups", "Counseling_2015", "Wrap Arround Wed", "HHAA" }));
         jComboBoxAccessHW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxAccessHWActionPerformed(evt);
