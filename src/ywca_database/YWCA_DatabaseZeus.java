@@ -1199,7 +1199,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
          this.select = "SELECT " + " ";
          this.from = "FROM " + " ";
          this.where = "WHERE ";
-            
+
          basic concat query = select+from+where, as a result Sub where for group by, Select for modify etc.
          ; added later do not add
          */
@@ -1261,7 +1261,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         } else {
             this.jButton1ActionPerformed(null);
         }
-
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
