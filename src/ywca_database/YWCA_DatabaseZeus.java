@@ -281,6 +281,43 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         Month = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        WAW_FamLaw = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        WAW_LegalAdvocate = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        WAW_CSOAdvocate = new javax.swing.JTextField();
+        WAW_HousingAdvocate = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        WAW_Counseling = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        WAW_ChildAdvocate = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        WAW_CommunityPartners = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        BtnWAW = new javax.swing.JButton();
+        WAW_Week = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
         SQLAccess = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jButtonAccesRun = new javax.swing.JButton();
@@ -614,6 +651,233 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Counseling_Update", Counseling);
+
+        WAW_FamLaw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WAW_FamLawActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Family Law");
+
+        WAW_LegalAdvocate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WAW_LegalAdvocateActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("Legal Advocate");
+
+        jLabel26.setText("CSO Advocate");
+
+        WAW_CSOAdvocate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WAW_CSOAdvocateActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("Housing Advocate");
+
+        jLabel28.setText("Counseling");
+
+        jLabel29.setText("Child Advocate");
+
+        jLabel30.setText("Community Partners");
+
+        BtnWAW.setText("Modify Wrap Around Wednesday");
+        BtnWAW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnWAWActionPerformed(evt);
+            }
+        });
+
+        WAW_Week.setText("jTextField2");
+
+        jLabel31.setText("Week (xx/xx/xxxx)");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(525, Short.MAX_VALUE)
+                .addComponent(BtnWAW)
+                .addGap(227, 227, 227))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(WAW_CommunityPartners)
+                    .addComponent(WAW_ChildAdvocate)
+                    .addComponent(WAW_Counseling)
+                    .addComponent(WAW_HousingAdvocate)
+                    .addComponent(WAW_CSOAdvocate)
+                    .addComponent(WAW_LegalAdvocate)
+                    .addComponent(WAW_FamLaw)
+                    .addComponent(WAW_Week, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(WAW_FamLaw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_LegalAdvocate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_CSOAdvocate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_HousingAdvocate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_Counseling, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_ChildAdvocate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(WAW_CommunityPartners, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel30)
+                .addGap(18, 18, 18)
+                .addComponent(WAW_Week, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addComponent(BtnWAW)
+                .addGap(118, 118, 118))
+        );
+
+        jTabbedPane1.addTab("WrapAroundWednesday_Update", jPanel1);
+
+        jTextField2.setText("jTextField2");
+
+        jLabel32.setText("Client ID");
+
+        jTextField3.setText("jTextField3");
+
+        jLabel33.setText("Relationship to Head of Household");
+
+        jTextField4.setText("jTextField4");
+
+        jLabel34.setText("Number of Case Members");
+
+        jTextField7.setText("jTextField7");
+
+        jLabel35.setText("Date of Birth (xx/xx/xxxx)");
+
+        jTextField8.setText("jTextField8");
+
+        jLabel36.setText("DOB Quality");
+
+        jTextField9.setText("jTextField9");
+
+        jLabel37.setText("Race");
+
+        jTextField10.setText("jTextField10");
+
+        jLabel38.setText("Ethnicity");
+
+        jTextField11.setText("jTextField11");
+
+        jLabel39.setText("Gender");
+
+        jTextField12.setText("jTextField12");
+
+        jLabel40.setText("Veteran (YES / NO)");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel37))))
+                .addContainerGap(766, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel40)
+                .addContainerGap(323, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("HHAA_Update", jPanel4);
 
         javax.swing.GroupLayout EricasLayout = new javax.swing.GroupLayout(Ericas);
         Ericas.setLayout(EricasLayout);
@@ -951,13 +1215,13 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             this.from = "FROM Counseling_2015" + " ";
             this.where = "";
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 2) {
-            this.Query
-                    = "SELECT p.[Product Name] AS \"Discontinued Products\" FROM Products p WHERE p.Discontinued = 1;";
-            this.passNum = 0;
+            this.select = "SELECT Week, FamilyLaw, CSOAdvocate, HousingAdvocate, Counseling, ChildAdvocate, CommunityPartners, TotalPeople" + " ";
+            this.from = "FROM WrapAroundWednesday" + " ";
+            this.where = "";
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 3) {
-            this.Query
-                    = "SELECT  p.[Product Name] FROM Products p WHERE p.[Product Name] LIKE 'Northwind Traders Dried *';";
-            this.passNum = 1;
+            this.select = "SELECT ClientID, HoH_Relationship, Num_Case_Members, DOB, DOB_Quality, Race, Ethnicity, Gender, Veteran_Status, Disabling_Condition, Prior_Residence, Length_of_Stay, Entry_Housing_Status, Enroll_Date, Exit_Date, Bednights, Destination_at_Exit, Program" + " ";
+            this.from = "FROM HHAA_BednightsEmployment" + " ";
+            this.where = "";
         } else if (this.jComboBoxAccessHW.getSelectedIndex() == 4) {
             this.Query
                     = "SELECT  p.[Product Name] FROM Products p WHERE p.Category LIKE 'Beverages' AND p.Discontinued <> 1;";
@@ -1144,6 +1408,85 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BtnGroupsActionPerformed
 
+    private void WAW_LegalAdvocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WAW_LegalAdvocateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WAW_LegalAdvocateActionPerformed
+
+    private void WAW_FamLawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WAW_FamLawActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WAW_FamLawActionPerformed
+
+    private void BtnWAWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnWAWActionPerformed
+        // TODO add your handling code here:
+        
+        //Run WAW mod
+        String Update = "UPDATE WrapAroundWednesday SET";
+        String Where = "";
+        if (!"".equals(this.WAW_FamLaw.getText())) {
+            String WAW_FamLaw = " WAW_FamLaw = " + this.WAW_FamLaw.getText() + ",";
+            Update += WAW_FamLaw;
+            //Should ^^^^^ by WAW_FamLaw (input var) or FamilyLaw(db attribute)
+            //Made all of them input var, change if should be db att
+        }
+
+        if (!"".equals(this.WAW_LegalAdvocate.getText())) {
+            String WAW_LegalAdvocate = " WAW_LegalAdvocate = " + this.WAW_LegalAdvocate.getText() + ",";
+            Update += WAW_LegalAdvocate;
+        }
+
+        if (!"".equals(this.WAW_CSOAdvocate.getText())) {
+            String WAW_CSOAdvocate = " WAW_CSOAdvocate = " + this.WAW_CSOAdvocate.getText() + ",";
+            Update += WAW_CSOAdvocate;
+        }
+
+        if (!"".equals(this.WAW_HousingAdvocate.getText())) {
+            String WAW_HousingAdvocate = " WAW_HousingAdvocate = " + this.WAW_HousingAdvocate.getText() + ",";
+            Update += WAW_HousingAdvocate;
+        }
+        
+        if (!"".equals(this.WAW_Counseling.getText())) {
+            String WAW_Counseling = " WAW_Counseling = " + this.WAW_Counseling.getText() + ",";
+            Update += WAW_Counseling;
+        }
+        
+        if (!"".equals(this.WAW_ChildAdvocate.getText())) {
+            String WAW_ChildAdvocate = " WAW_ChildAdvocate = " + this.WAW_ChildAdvocate.getText() + ",";
+            Update += WAW_ChildAdvocate;
+        }
+        
+        if (!"".equals(this.WAW_CommunityPartners.getText())) {
+            String WAW_CommunityPartners = " WAW_CommunityPartners = " + this.WAW_CommunityPartners.getText() + ",";
+            Update += WAW_CommunityPartners;
+        }
+
+        if (Update.endsWith(",")) {
+            String substring = Update.substring(0, Update.length() - 1);
+            Update = substring;
+        }
+
+        if (!"".equals(this.WAW_Week.getText())) {
+            String WAW_Week = this.WAW_Week.getText();
+            Where = " Where week = " + "'" + WAW_Week + "'";
+        }
+        this.select = Update;
+        this.from = Where;
+
+        this.ModBabyMod();
+
+        //switch to reports and view changes
+        this.jComboBoxAccessHW.setSelectedIndex(2);
+        this.jTabbedPane6.setSelectedIndex(0);
+        this.jComboBoxAccessHWActionPerformed(evt);
+        this.GoBabyGo(jTable2);
+
+        
+        
+    }//GEN-LAST:event_BtnWAWActionPerformed
+
+    private void WAW_CSOAdvocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WAW_CSOAdvocateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WAW_CSOAdvocateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1182,6 +1525,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGroups;
+    private javax.swing.JButton BtnWAW;
     private javax.swing.JPanel Counseling;
     private javax.swing.JPanel DBPath;
     private javax.swing.JTextField Emma_Intakes;
@@ -1203,6 +1547,14 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTextField Teri_Intakes;
     private javax.swing.JTextField Teri_OnGoing;
     private javax.swing.JTextField Teri_Walkins;
+    private javax.swing.JTextField WAW_CSOAdvocate;
+    private javax.swing.JTextField WAW_ChildAdvocate;
+    private javax.swing.JTextField WAW_CommunityPartners;
+    private javax.swing.JTextField WAW_Counseling;
+    private javax.swing.JTextField WAW_FamLaw;
+    private javax.swing.JTextField WAW_HousingAdvocate;
+    private javax.swing.JTextField WAW_LegalAdvocate;
+    private javax.swing.JTextField WAW_Week;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1225,15 +1577,34 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1247,8 +1618,17 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTextArea jTextAreaResults;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextFieldFROM;
     private javax.swing.JTextField jTextFieldSELECT;
     private javax.swing.JTextField jTextFieldWHERE;
