@@ -75,7 +75,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
             String UID = "Admin";
             String PWD = ";";
-            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\10 ADVP - Database - Counseling & Legal.mdb;UID =%s; PWD =%s", DBQ, UID, PWD);
+            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\YWCA_Core.mdb;UID =%s; PWD =%s", DBQ, UID, PWD);
             accessDB = DriverManager.getConnection(database, "", "");
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             this.passNum = passNum;
