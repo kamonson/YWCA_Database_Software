@@ -158,34 +158,6 @@ public class Reports extends javax.swing.JFrame {
         this.where = where;
     }
     
-    public void ModBabyMod() {
-        
-        String in = this.select;
-        this.passNum = 0;
-        Pattern p = Pattern.compile(",");
-        Matcher m = p.matcher(in);
-        while (m.find()) {
-            passNum++;
-        }
-        
-        this.Query = this.select + this.from + this.where + ";";
-        this.RunAccessQuery(Query, passNum);
-
-                //switch to reports and view changes
-        this.jComboBox1.setSelectedIndex(0);
-        this.RunActionPerformed(null);
-        this.GoBabyGo(jTable1);
-        
-        //clear old stuff
-        Result.clear();
-        ResultHeadings.clear();
-        this.select = "select ";
-        this.from = " from ";
-        this.where = " where ";
-        this.Query = "";
-        this.passNum = 0;
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

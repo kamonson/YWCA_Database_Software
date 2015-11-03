@@ -5,12 +5,28 @@
  */
 package pkginterface;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import ywca_database.UseSQL.SQL_Access;
+import ywca_database.YWCA_DatabaseZeus;
+
 /**
  *
  * @author Kat
  */
 public class Groups extends javax.swing.JFrame {
 String select, from, where;
+String Query = "";
+int passNum;
     /**
      * Creates new form Groups
      */
@@ -44,9 +60,9 @@ private Reports r = new Reports();
         M = new javax.swing.JLabel();
         IUtextfield = new javax.swing.JTextField();
         SGtextfield = new javax.swing.JTextField();
-        SGUtextfield = new javax.swing.JTextField();
-        Itextfield = new javax.swing.JTextField();
         Mtextfield = new javax.swing.JTextField();
+        Itextfield = new javax.swing.JTextField();
+        SGUtextfield = new javax.swing.JTextField();
         Update = new javax.swing.JButton();
         Return = new javax.swing.JButton();
         groups_bg = new javax.swing.JLabel();
@@ -96,12 +112,12 @@ private Reports r = new Reports();
         IUtextfield.setBounds(295, 141, 270, 30);
         getContentPane().add(SGtextfield);
         SGtextfield.setBounds(295, 185, 270, 30);
-        getContentPane().add(SGUtextfield);
-        SGUtextfield.setBounds(295, 273, 270, 30);
+        getContentPane().add(Mtextfield);
+        Mtextfield.setBounds(295, 273, 270, 30);
         getContentPane().add(Itextfield);
         Itextfield.setBounds(295, 96, 270, 30);
-        getContentPane().add(Mtextfield);
-        Mtextfield.setBounds(295, 229, 270, 30);
+        getContentPane().add(SGUtextfield);
+        SGUtextfield.setBounds(295, 229, 270, 30);
 
         Update.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         Update.setForeground(new java.awt.Color(255, 102, 0));
@@ -164,19 +180,84 @@ private Reports r = new Reports();
             Update = substring;
         }
 
-        if (!"".equals(this.Month_Groups.getText())) {
-            String Month_Groups = this.Month_Groups.getText();
+        if (!"".equals(this.Mtextfield.getText())) {
+            String Month_Groups = this.Mtextfield.getText();
             Where = " Where month = " + "'" + Month_Groups + "'";
         }
         this.select = Update;
         this.from = Where;
+        this.where = "";
 
-       
-        r.set(this.select, this.from, this.where);
-        r.ModBabyMod();
+        this.ModBabyMod();
+        JOptionPane.showMessageDialog(null, "Complete");
+    String[] args = null;
+        Update_Menu.main(args);
+        this.dispose();
 
     }//GEN-LAST:event_UpdateActionPerformed
+public void ModBabyMod() {
+        
+        String in = this.select;
+        this.passNum = 0;
+        Pattern p = Pattern.compile(",");
+        Matcher m = p.matcher(in);
+        while (m.find()) {
+            passNum++;
+        }
+        
+        this.Query = this.select + this.from + this.where + ";";
+        this.RunAccessQuery(Query, passNum);
 
+        //switch to reports and view changes
+//        this.jComboBox1.setSelectedIndex(0);
+//        this.RunActionPerformed(null);
+//        this.GoBabyGo(jTable1);
+        
+        //clear old stuff
+            this.select = "select ";
+            this.from = " from ";
+            this.where = " where ";
+            this.Query = "";
+            this.passNum = 0;
+    }
+
+ public void RunAccessQuery(String Query, int passNum) {
+        try {
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Connection accessDB;
+            //jdbc:odbcDriver{Microsoft Access Driver (*.mdb, *.accdb)} must be installed check data sources to ensure it is
+            //DBQ=<path to db>
+            //UID = Admin or username
+            //PWD= <blank> or password
+            String DBQ = "";
+
+            try {
+                InputStream DBLoc = new FileInputStream("locationData.txt");
+
+                java.util.Scanner s = new java.util.Scanner(DBLoc).useDelimiter("\\A");
+                DBQ = s.hasNext() ? s.next() : "";
+
+            } catch (IOException ex) {
+                System.out.print("Check and make sure you use the DBLocation tab");
+            }
+
+            String UID = "Admin";
+            String PWD = ";";
+            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\YWCA_Core.mdb;UID =%s; PWD =%s", DBQ, UID, PWD);
+            accessDB = DriverManager.getConnection(database, "", "");
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            this.passNum = passNum;
+            SQL_Access.viewTable(accessDB, Query, this.passNum);
+        } catch (SQLException ex) {
+            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+            //clear old stuff
+            this.select = "select ";
+            this.from = " from ";
+            this.where = " where ";
+            this.Query = "";
+            this.passNum = 0;
+        } 
+    }
     /**
      * @param args the command line arguments
      */

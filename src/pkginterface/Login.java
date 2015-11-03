@@ -98,7 +98,7 @@ public class Login extends javax.swing.JFrame {
         } else if (pwd.equals("Peon")) {
             YWCA_DatabasePeon.main(args);
         } else {
-            message = Integer.parseInt(JOptionPane.showInputDialog("Try Again"));
+            JOptionPane.showMessageDialog(null, "Try Again");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_EnterActionPerformed
 
