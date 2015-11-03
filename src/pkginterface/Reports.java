@@ -231,7 +231,7 @@ public class Reports extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Return);
-        Return.setBounds(10, 630, 280, 40);
+        Return.setBounds(10, 630, 230, 40);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Groups", "Counseling 2015", "Wrap Around Wednesday", "HHAA" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
