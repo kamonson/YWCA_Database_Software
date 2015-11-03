@@ -24,20 +24,22 @@ import ywca_database.YWCA_DatabaseZeus;
  * @author Kat
  */
 public class Groups extends javax.swing.JFrame {
-String select, from, where;
-String Query = "";
-int passNum;
+
+    String select, from, where;
+    String Query = "";
+    int passNum;
+
     /**
      * Creates new form Groups
      */
 
     public Groups() {
         initComponents();
-        
+
         Update.setOpaque(false);
         Update.setContentAreaFilled(false);
         Update.setBorderPainted(false);
-        
+
         Return.setOpaque(false);
         Return.setContentAreaFilled(false);
         Return.setBorderPainted(false);
@@ -145,9 +147,9 @@ int passNum;
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
-       String[] args = null;
-       Update_Menu.main(args);
-       this.dispose();
+        String[] args = null;
+        Update_Menu.main(args);
+        this.dispose();
     }//GEN-LAST:event_ReturnActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
@@ -189,13 +191,13 @@ int passNum;
 
         this.ModBabyMod();
         JOptionPane.showMessageDialog(null, "Complete");
-    String[] args = null;
+        String[] args = null;
         Update_Menu.main(args);
         this.dispose();
 
     }//GEN-LAST:event_UpdateActionPerformed
-public void ModBabyMod() {
-        
+    public void ModBabyMod() {
+
         String in = this.select;
         this.passNum = 0;
         Pattern p = Pattern.compile(",");
@@ -203,7 +205,7 @@ public void ModBabyMod() {
         while (m.find()) {
             passNum++;
         }
-        
+
         this.Query = this.select + this.from + this.where + ";";
         this.RunAccessQuery(Query, passNum);
 
@@ -211,16 +213,15 @@ public void ModBabyMod() {
 //        this.jComboBox1.setSelectedIndex(0);
 //        this.RunActionPerformed(null);
 //        this.GoBabyGo(jTable1);
-        
         //clear old stuff
-            this.select = "select ";
-            this.from = " from ";
-            this.where = " where ";
-            this.Query = "";
-            this.passNum = 0;
+        this.select = "select ";
+        this.from = " from ";
+        this.where = " where ";
+        this.Query = "";
+        this.passNum = 0;
     }
 
- public void RunAccessQuery(String Query, int passNum) {
+    public void RunAccessQuery(String Query, int passNum) {
         try {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Connection accessDB;
@@ -255,8 +256,9 @@ public void ModBabyMod() {
             this.where = " where ";
             this.Query = "";
             this.passNum = 0;
-        } 
+        }
     }
+
     /**
      * @param args the command line arguments
      */

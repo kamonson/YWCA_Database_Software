@@ -5,7 +5,6 @@
  */
 package pkginterface;
 
-
 import javax.swing.JOptionPane;
 import ywca_database.YWCA_DatabasePeon;
 import java.awt.event.KeyEvent;
@@ -85,7 +84,7 @@ public class Login extends javax.swing.JFrame {
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
         int message;
-        
+
         String pwd = "";
         String pwdToMatch = "Zeus";
         String args[] = null;
@@ -107,13 +106,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_EnterMouseClicked
 
     private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
-if (KeyEvent.VK_ENTER != evt.getKeyCode()) {
+        if (KeyEvent.VK_ENTER != evt.getKeyCode()) {
         } else {
             this.EnterActionPerformed(null);
-        }        
+        }
     }//GEN-LAST:event_PasswordKeyPressed
 
-     
     /**
      * @param args the command line arguments
      */
@@ -156,4 +154,4 @@ if (KeyEvent.VK_ENTER != evt.getKeyCode()) {
     private javax.swing.JLabel login_bg;
     // End of variables declaration//GEN-END:variables
 
-    }
+}

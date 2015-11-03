@@ -16,28 +16,27 @@ public class Update_Menu extends javax.swing.JFrame {
      */
     public Update_Menu() {
         initComponents();
-        
+
         Counseling.setOpaque(false);
         Counseling.setContentAreaFilled(false);
         Counseling.setBorderPainted(false);
-        
+
         Groups.setOpaque(false);
         Groups.setContentAreaFilled(false);
         Groups.setBorderPainted(false);
-        
+
         WAW.setOpaque(false);
         WAW.setContentAreaFilled(false);
         WAW.setBorderPainted(false);
-        
+
         HHAA.setOpaque(false);
         HHAA.setContentAreaFilled(false);
         HHAA.setBorderPainted(false);
-        
+
         Return.setOpaque(false);
         Return.setContentAreaFilled(false);
         Return.setBorderPainted(false);
-        
-        
+
     }
 
     /**
@@ -112,8 +111,8 @@ public class Update_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GroupsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GroupsActionPerformed
- Main_Menu.groupsMain();
- this.dispose();
+        Main_Menu.groupsMain();
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_GroupsActionPerformed
 
@@ -124,8 +123,8 @@ public class Update_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnActionPerformed
 
     private void CounselingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CounselingActionPerformed
-       Main_Menu.CounselingMain();
-       this.dispose();// TODO add your handling code here:
+        Main_Menu.CounselingMain();
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_CounselingActionPerformed
 
     /**

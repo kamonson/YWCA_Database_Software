@@ -22,11 +22,11 @@ public class DBpath extends javax.swing.JFrame {
      */
     public DBpath() {
         initComponents();
-        
+
         Change.setOpaque(false);
         Change.setContentAreaFilled(false);
         Change.setBorderPainted(false);
-        
+
         Return.setOpaque(false);
         Return.setContentAreaFilled(false);
         Return.setBorderPainted(false);
@@ -68,10 +68,21 @@ public class DBpath extends javax.swing.JFrame {
         });
         getContentPane().add(Change);
         Change.setBounds(180, 170, 140, 50);
+
+        Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Return);
         Return.setBounds(10, 250, 230, 40);
 
         DBpathTF.setText("eg:  Z:\\DatabaseLocation");
+        DBpathTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DBpathTFActionPerformed(evt);
+            }
+        });
         getContentPane().add(DBpathTF);
         DBpathTF.setBounds(78, 133, 340, 30);
 
@@ -84,18 +95,31 @@ public class DBpath extends javax.swing.JFrame {
 
     private void ChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeActionPerformed
         // TODO add your handling code here:
-        
+
         //Set the path of database file
         String locationData = "locationData.txt";
-        String location = this.DBpath.getText();
+        String location = this.DBpathTF.getText();
         byte[] arrByte = location.getBytes();
         try (OutputStream out = new BufferedOutputStream(new FileOutputStream(locationData), 1024)) {
             out.write(arrByte);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JOptionPane.showMessageDialog(null,"Changed!");
+        JOptionPane.showMessageDialog(null, "Complete");
+        String[] args = null;
+        Update_Menu.main(args);
+        this.dispose();
     }//GEN-LAST:event_ChangeActionPerformed
+
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+        String[] args = null;
+        Main_Menu.main(args);// TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:  // TODO add your handling code here:
+    }//GEN-LAST:event_ReturnActionPerformed
+
+    private void DBpathTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DBpathTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DBpathTFActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,7 +5,6 @@
  */
 package pkginterface;
 
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,16 +36,15 @@ public class Reports extends javax.swing.JFrame {
      */
     public Reports() {
         initComponents();
-        
+
         Run.setOpaque(false);
         Run.setContentAreaFilled(false);
         Run.setBorderPainted(false);
-        
+
         Return.setOpaque(false);
         Return.setContentAreaFilled(false);
         Return.setBorderPainted(false);
     }
-
 
     private int passNum;
     private String Query;
@@ -99,12 +97,14 @@ public class Reports extends javax.swing.JFrame {
             this.where = " where ";
             this.Query = "";
             this.passNum = 0;
-        } 
+        }
     }
-     //run SQLQuerry on button press 
+
+    //run SQLQuerry on button press 
+
     public void GoBabyGo(JTable table) {
         //establish select, from, where
-      
+
         String in = this.select;
         this.passNum = 0;
         Pattern p = Pattern.compile(",");
@@ -112,7 +112,7 @@ public class Reports extends javax.swing.JFrame {
         while (m.find()) {
             passNum++;
         }
-        
+
         this.Query = this.select + this.from + this.where + ";";
         this.RunAccessQuery(Query, passNum);
 
@@ -151,13 +151,13 @@ public class Reports extends javax.swing.JFrame {
         this.Query = "";
         this.passNum = 0;
     }
-    
-    public void set(String select, String from, String where){
+
+    public void set(String select, String from, String where) {
         this.select = select;
         this.from = from;
         this.where = where;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -274,12 +274,12 @@ public class Reports extends javax.swing.JFrame {
             this.select = "SELECT ClientID, HoH_Relationship, Num_Case_Members, DOB, DOB_Quality, Race, Ethnicity, Gender, Veteran_Status, Disabling_Condition, Prior_Residence, Length_of_Stay, Entry_Housing_Status, Enroll_Date, Exit_Date, Bednights, Destination_at_Exit, Program" + " ";
             this.from = "FROM HHAA_BednightsEmployment" + " ";
             this.where = "";
-        } 
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunActionPerformed
         // TODO add your handling code here:
-                //Select reports
+        //Select reports
         this.GoBabyGo(this.jTable1);
         Result.clear();
         ResultHeadings.clear();
@@ -323,7 +323,7 @@ public class Reports extends javax.swing.JFrame {
             @Override
             public void run() {
                 new Reports().setVisible(true);
-             }
+            }
         });
     }
 

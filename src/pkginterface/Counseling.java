@@ -19,27 +19,26 @@ import javax.swing.JOptionPane;
 import ywca_database.UseSQL.SQL_Access;
 import ywca_database.YWCA_DatabaseZeus;
 
-
-
 /**
  *
  * @author Kat
  */
 public class Counseling extends javax.swing.JFrame {
-String select, from, where;
-String Query = "";
-int passNum;
-    
+
+    String select, from, where;
+    String Query = "";
+    int passNum;
+
     /**
      * Creates new form Counseling
      */
     public Counseling() {
         initComponents();
-        
+
         Update.setOpaque(false);
         Update.setContentAreaFilled(false);
         Update.setBorderPainted(false);
-        
+
         Return.setOpaque(false);
         Return.setContentAreaFilled(false);
         Return.setBorderPainted(false);
@@ -145,43 +144,48 @@ int passNum;
     }// </editor-fold>//GEN-END:initComponents
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-   //Modify counsuling form 2015
+        //Modify counsuling form 2015
         String Update = "UPDATE Counseling_2015 SET";
         String Where = "";
-       
+
         if (this.IntakeDrop2.getSelectedIndex() == 0) {
             String melva_intakes = " Teri_Intakes = '" + this.IntakeTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop2.getSelectedIndex() == 1){
+        } else if (this.IntakeDrop2.getSelectedIndex() == 1) {
             String melva_intakes = " Emma_Intakes = '" + this.IntakeTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop2.getSelectedIndex() == 2){
+        } else if (this.IntakeDrop2.getSelectedIndex() == 2) {
             String melva_intakes = " Melva_Intakes = '" + this.IntakeTF.getText() + "',";
             Update += melva_intakes;
-        }else Update += "";
+        } else {
+            Update += "";
+        }
 
-      
-         if (this.IntakeDrop.getSelectedIndex() == 0) {
+        if (this.IntakeDrop.getSelectedIndex() == 0) {
             String melva_intakes = " Teri_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop.getSelectedIndex() == 1){
+        } else if (this.IntakeDrop.getSelectedIndex() == 1) {
             String melva_intakes = " Emma_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop.getSelectedIndex() == 2){
+        } else if (this.IntakeDrop.getSelectedIndex() == 2) {
             String melva_intakes = " Melva_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
-        }else Update += "";
-      
- if (this.IntakeDrop1.getSelectedIndex() == 0) {
+        } else {
+            Update += "";
+        }
+
+        if (this.IntakeDrop1.getSelectedIndex() == 0) {
             String melva_intakes = " Teri_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop1.getSelectedIndex() == 1){
+        } else if (this.IntakeDrop1.getSelectedIndex() == 1) {
             String melva_intakes = " Emma_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
-        }else if(this.IntakeDrop1.getSelectedIndex() == 2){
+        } else if (this.IntakeDrop1.getSelectedIndex() == 2) {
             String melva_intakes = " Melva_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
-        }else Update += "";
+        } else {
+            Update += "";
+        }
 
         if (Update.endsWith(",")) {
             String substring = Update.substring(0, Update.length() - 1);
@@ -197,8 +201,8 @@ int passNum;
         this.where = "";
 
         this.ModBabyMod();
-               JOptionPane.showMessageDialog(null, "Complete");
-    String[] args = null;
+        JOptionPane.showMessageDialog(null, "Complete");
+        String[] args = null;
         Update_Menu.main(args);
         this.dispose();
     }//GEN-LAST:event_UpdateActionPerformed
@@ -216,13 +220,13 @@ int passNum;
     }//GEN-LAST:event_IntakeDrop1ActionPerformed
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
-               String[] args = null;
-       Update_Menu.main(args);
-       this.dispose();
+        String[] args = null;
+        Update_Menu.main(args);
+        this.dispose();
     }//GEN-LAST:event_ReturnActionPerformed
 
     public void ModBabyMod() {
-        
+
         String in = this.select;
         this.passNum = 0;
         Pattern p = Pattern.compile(",");
@@ -230,7 +234,7 @@ int passNum;
         while (m.find()) {
             passNum++;
         }
-        
+
         this.Query = this.select + this.from + this.where + ";";
         this.RunAccessQuery(Query, passNum);
 
@@ -238,16 +242,15 @@ int passNum;
 //        this.jComboBox1.setSelectedIndex(0);
 //        this.RunActionPerformed(null);
 //        this.GoBabyGo(jTable1);
-        
         //clear old stuff
-            this.select = "select ";
-            this.from = " from ";
-            this.where = " where ";
-            this.Query = "";
-            this.passNum = 0;
+        this.select = "select ";
+        this.from = " from ";
+        this.where = " where ";
+        this.Query = "";
+        this.passNum = 0;
     }
 
- public void RunAccessQuery(String Query, int passNum) {
+    public void RunAccessQuery(String Query, int passNum) {
         try {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Connection accessDB;
@@ -282,7 +285,9 @@ int passNum;
             this.where = " where ";
             this.Query = "";
             this.passNum = 0;
-        }} 
+        }
+    }
+
     /**
      * @param args the command line arguments
      */

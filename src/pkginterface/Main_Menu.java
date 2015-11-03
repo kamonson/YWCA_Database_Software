@@ -16,23 +16,23 @@ public class Main_Menu extends javax.swing.JFrame {
      */
     public Main_Menu() {
         initComponents();
-        
+
         SQL.setOpaque(false);
         SQL.setContentAreaFilled(false);
         SQL.setBorderPainted(false);
-        
+
         reports.setOpaque(false);
         reports.setContentAreaFilled(false);
         reports.setBorderPainted(false);
-        
+
         modify.setOpaque(false);
         modify.setContentAreaFilled(false);
         modify.setBorderPainted(false);
-        
+
         logout.setOpaque(false);
         logout.setContentAreaFilled(false);
         logout.setBorderPainted(false);
-        
+
         dbpath.setOpaque(false);
         dbpath.setContentAreaFilled(false);
         dbpath.setBorderPainted(false);
@@ -104,6 +104,11 @@ public class Main_Menu extends javax.swing.JFrame {
         dbpath.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         dbpath.setForeground(new java.awt.Color(255, 102, 51));
         dbpath.setText("Database Path");
+        dbpath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbpathActionPerformed(evt);
+            }
+        });
         getContentPane().add(dbpath);
         dbpath.setBounds(134, 285, 330, 40);
 
@@ -121,7 +126,7 @@ public class Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_reportsActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-              String[] args = null;
+        String[] args = null;
         Login.main(args);// TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
@@ -132,16 +137,22 @@ public class Main_Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_modifyActionPerformed
 
-    public static void groupsMain(){
+    private void dbpathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbpathActionPerformed
+        String[] args = null;
+        DBpath.main(args);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_dbpathActionPerformed
+
+    public static void groupsMain() {
         String[] args = null;
         Groups.main(args);
     }
-    
-    public static void CounselingMain(){
+
+    public static void CounselingMain() {
         String[] args = null;
         Counseling.main(args);
     }
-    
+
     /**
      * @param args the command line arguments
      */

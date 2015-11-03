@@ -1504,11 +1504,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.jComboBoxAccessHWActionPerformed(evt);
         this.GoBabyGo(jTable2);
 
-        
-        
-        
-        
-        
+
     }//GEN-LAST:event_BtnGroupsActionPerformed
 
     private void WAW_LegalAdvocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WAW_LegalAdvocateActionPerformed
@@ -1521,7 +1517,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     private void BtnWAWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnWAWActionPerformed
         // TODO add your handling code here:
-        
+
         //Run WAW mod
         String Update = "UPDATE WrapAroundWednesday SET";
         String Where = "";
@@ -1546,17 +1542,17 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             String WAW_HousingAdvocate = " WAW_HousingAdvocate = " + this.WAW_HousingAdvocate.getText() + ",";
             Update += WAW_HousingAdvocate;
         }
-        
+
         if (!"".equals(this.WAW_Counseling.getText())) {
             String WAW_Counseling = " WAW_Counseling = " + this.WAW_Counseling.getText() + ",";
             Update += WAW_Counseling;
         }
-        
+
         if (!"".equals(this.WAW_ChildAdvocate.getText())) {
             String WAW_ChildAdvocate = " WAW_ChildAdvocate = " + this.WAW_ChildAdvocate.getText() + ",";
             Update += WAW_ChildAdvocate;
         }
-        
+
         if (!"".equals(this.WAW_CommunityPartners.getText())) {
             String WAW_CommunityPartners = " WAW_CommunityPartners = " + this.WAW_CommunityPartners.getText() + ",";
             Update += WAW_CommunityPartners;
@@ -1582,8 +1578,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.jComboBoxAccessHWActionPerformed(evt);
         this.GoBabyGo(jTable2);
 
-        
-        
+
     }//GEN-LAST:event_BtnWAWActionPerformed
 
     private void WAW_CSOAdvocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WAW_CSOAdvocateActionPerformed
@@ -1592,7 +1587,7 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
     private void BtnHHAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHHAAActionPerformed
         // TODO add your handling code here:
-        
+
         //Run HHAA mod
         String Update = "UPDATE HHAA_BednightsEmployees SET";
         String Where = "";
@@ -1615,72 +1610,72 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
             String HHAA_DOB = " HHAA_DOB = " + this.HHAA_DOB.getText() + ",";
             Update += HHAA_DOB;
         }
-        
+
         if (!"".equals(this.HHAA_DOBQuality.getText())) {
             String HHAA_DOBQuality = " HHAA_DOBQuality = " + this.HHAA_DOBQuality.getText() + ",";
             Update += HHAA_DOBQuality;
         }
-        
+
         if (!"".equals(this.HHAA_Race.getText())) {
             String HHAA_Race = " HHAA_Race = " + this.HHAA_Race.getText() + ",";
             Update += HHAA_Race;
         }
-        
+
         if (!"".equals(this.HHAA_Ethnicity.getText())) {
             String HHAA_Ethnicity = " HHAA_Ethnicity = " + this.HHAA_Ethnicity.getText() + ",";
             Update += HHAA_Ethnicity;
         }
-        
+
         if (!"".equals(this.HHAA_Gender.getText())) {
             String HHAA_Gender = " HHAA_Gender = " + this.HHAA_Gender.getText() + ",";
             Update += HHAA_Gender;
         }
-        
+
         if (!"".equals(this.HHAA_Veteran.getText())) {
             String HHAA_Veteran = " HHAA_Veteran = " + this.HHAA_Veteran.getText() + ",";
             Update += HHAA_Veteran;
         }
-        
+
         if (!"".equals(this.HHAA_DisablingCondition.getText())) {
             String HHAA_DisablingCondition = " HHAA_DisablingCondition = " + this.HHAA_DisablingCondition.getText() + ",";
             Update += HHAA_DisablingCondition;
         }
-        
+
         if (!"".equals(this.HHAA_PriorResidence.getText())) {
             String HHAA_PriorResidence = " HHAA_PriorResidence = " + this.HHAA_PriorResidence.getText() + ",";
             Update += HHAA_PriorResidence;
         }
-        
+
         if (!"".equals(this.HHAA_LengthStay.getText())) {
             String HHAA_LengthStay = " HHAA_LengthStay = " + this.HHAA_LengthStay.getText() + ",";
             Update += HHAA_LengthStay;
         }
-        
+
         if (!"".equals(this.HHAA_HousingAtEntry.getText())) {
             String HHAA_HousingAtEntry = " HHAA_HousingAtEntry = " + this.HHAA_HousingAtEntry.getText() + ",";
             Update += HHAA_HousingAtEntry;
         }
-        
+
         if (!"".equals(this.HHAA_EnrollDate.getText())) {
             String HHAA_EnrollDate = " HHAA_EnrollDate = " + this.HHAA_EnrollDate.getText() + ",";
             Update += HHAA_EnrollDate;
         }
-        
+
         if (!"".equals(this.HHAA_ExitDate.getText())) {
             String HHAA_ExitDate = " HHAA_ExitDate = " + this.HHAA_ExitDate.getText() + ",";
             Update += HHAA_ExitDate;
         }
-        
+
         if (!"".equals(this.HHAA_Bednights.getText())) {
             String HHAA_Bednights = " HHAA_Bednights = " + this.HHAA_Bednights.getText() + ",";
             Update += HHAA_Bednights;
         }
-        
+
         if (!"".equals(this.HHAA_ExitDestination.getText())) {
             String HHAA_ExitDestination = " HHAA_ExitDestination = " + this.HHAA_ExitDestination.getText() + ",";
             Update += HHAA_ExitDestination;
         }
-        
+
         if (!"".equals(this.HHAA_Program.getText())) {
             String HHAA_Program = " HHAA_Program = " + this.HHAA_Program.getText() + ",";
             Update += HHAA_Program;
