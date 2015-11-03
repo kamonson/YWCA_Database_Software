@@ -58,23 +58,23 @@ public class Update_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YWCA Database Modify Menu");
-        setMaximumSize(new java.awt.Dimension(600, 470));
         setMinimumSize(new java.awt.Dimension(600, 470));
-        setPreferredSize(new java.awt.Dimension(606, 450));
-        setSize(new java.awt.Dimension(600, 450));
         getContentPane().setLayout(null);
 
         WAW.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         WAW.setForeground(new java.awt.Color(255, 102, 0));
         WAW.setText("Wrap Around Wednesday");
-        WAW.setSize(new java.awt.Dimension(330, 40));
         getContentPane().add(WAW);
         WAW.setBounds(135, 223, 330, 40);
 
         Groups.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         Groups.setForeground(new java.awt.Color(255, 102, 0));
         Groups.setText("Groups");
-        Groups.setSize(new java.awt.Dimension(330, 40));
+        Groups.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GroupsActionPerformed(evt);
+            }
+        });
         getContentPane().add(Groups);
         Groups.setBounds(135, 109, 330, 40);
 
@@ -82,16 +82,20 @@ public class Update_Menu extends javax.swing.JFrame {
         HHAA.setForeground(new java.awt.Color(255, 102, 0));
         HHAA.setText("HHAA");
         HHAA.setToolTipText("");
-        HHAA.setSize(new java.awt.Dimension(330, 40));
         getContentPane().add(HHAA);
         HHAA.setBounds(135, 281, 330, 40);
 
         Counseling.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         Counseling.setForeground(new java.awt.Color(255, 102, 0));
         Counseling.setText("Counseling");
-        Counseling.setSize(new java.awt.Dimension(330, 40));
         getContentPane().add(Counseling);
         Counseling.setBounds(135, 165, 330, 40);
+
+        Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Return);
         Return.setBounds(10, 390, 240, 50);
 
@@ -101,6 +105,18 @@ public class Update_Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GroupsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GroupsActionPerformed
+ Main_Menu.groupsMain();
+ this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GroupsActionPerformed
+
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+        String[] args = null;
+        Main_Menu.main(args);// TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_ReturnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -84,6 +84,11 @@ public class Main_Menu extends javax.swing.JFrame {
         modify.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         modify.setForeground(new java.awt.Color(255, 102, 51));
         modify.setText("Modify");
+        modify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyActionPerformed(evt);
+            }
+        });
         getContentPane().add(modify);
         modify.setBounds(134, 169, 330, 40);
 
@@ -121,6 +126,17 @@ public class Main_Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void modifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyActionPerformed
+        String[] args = null;
+        Update_Menu.main(args);// TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_modifyActionPerformed
+
+    public static void groupsMain(){
+        String[] args = null;
+        Groups.main(args);
+    }
+    
     /**
      * @param args the command line arguments
      */

@@ -50,9 +50,9 @@ public class Reports extends javax.swing.JFrame {
 
     private int passNum;
     private String Query;
-    private String select = "select ";
-    private String from = " from ";
-    private String where = " where ";
+    public String select = "select ";
+    public String from = " from ";
+    public String where = " where ";
     private static ArrayList<String> Result = new ArrayList<>();
     private static ArrayList<String> ResultHeadings = new ArrayList<>();
 
@@ -142,6 +142,40 @@ public class Reports extends javax.swing.JFrame {
         }
         table.setModel(tableModel);
 
+        //clear old stuff
+        Result.clear();
+        ResultHeadings.clear();
+        this.select = "select ";
+        this.from = " from ";
+        this.where = " where ";
+        this.Query = "";
+        this.passNum = 0;
+    }
+    
+    public void set(String select, String from, String where){
+        this.select = select;
+        this.from = from;
+        this.where = where;
+    }
+    
+    public void ModBabyMod() {
+        
+        String in = this.select;
+        this.passNum = 0;
+        Pattern p = Pattern.compile(",");
+        Matcher m = p.matcher(in);
+        while (m.find()) {
+            passNum++;
+        }
+        
+        this.Query = this.select + this.from + this.where + ";";
+        this.RunAccessQuery(Query, passNum);
+
+                //switch to reports and view changes
+        this.jComboBox1.setSelectedIndex(0);
+        this.RunActionPerformed(null);
+        this.GoBabyGo(jTable1);
+        
         //clear old stuff
         Result.clear();
         ResultHeadings.clear();

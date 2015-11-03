@@ -10,10 +10,12 @@ package pkginterface;
  * @author Kat
  */
 public class Groups extends javax.swing.JFrame {
-
+String select, from, where;
     /**
      * Creates new form Groups
      */
+private Reports r = new Reports();
+
     public Groups() {
         initComponents();
         
@@ -83,24 +85,29 @@ public class Groups extends javax.swing.JFrame {
         SGU.setBounds(44, 262, 220, 30);
         getContentPane().add(IUtextfield);
         IUtextfield.setBounds(295, 154, 270, 30);
-
-        SGtextfield.setSize(new java.awt.Dimension(270, 30));
         getContentPane().add(SGtextfield);
         SGtextfield.setBounds(295, 207, 270, 30);
-
-        SGUtextfield.setSize(new java.awt.Dimension(270, 30));
         getContentPane().add(SGUtextfield);
         SGUtextfield.setBounds(295, 263, 270, 30);
-
-        Itextfield.setSize(new java.awt.Dimension(270, 30));
         getContentPane().add(Itextfield);
         Itextfield.setBounds(295, 101, 270, 30);
 
         Update.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         Update.setForeground(new java.awt.Color(255, 102, 0));
         Update.setText("Update");
+        Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateActionPerformed(evt);
+            }
+        });
         getContentPane().add(Update);
         Update.setBounds(230, 330, 140, 40);
+
+        Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Return);
         Return.setBounds(10, 390, 250, 50);
 
@@ -110,6 +117,54 @@ public class Groups extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+       String[] args = null;
+       Update_Menu.main(args);
+       this.dispose();
+    }//GEN-LAST:event_ReturnActionPerformed
+
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+        //Run Groups mod
+        String Update = "UPDATE Groups SET";
+        String Where = "";
+        if (!"".equals(this.Itextfield.getText())) {
+            String Isabellas = " Isabellas = " + this.Itextfield.getText() + ",";
+            Update += Isabellas;
+        }
+
+        if (!"".equals(this.IUtextfield.getText())) {
+            String Isabellas_Unduplicated = " Isabellas_Unduplicated = " + this.IUtextfield.getText() + ",";
+            Update += Isabellas_Unduplicated;
+        }
+
+        if (!"".equals(this.SGtextfield.getText())) {
+            String Support_Groups = " Support_Groups = " + this.SGtextfield.getText() + ",";
+            Update += Support_Groups;
+        }
+
+        if (!"".equals(this.SGUtextfield.getText())) {
+            String Support_Groups_Unduplicated = " Support_Groups_Unduplicated = " + this.SGUtextfield.getText() + ",";
+            Update += Support_Groups_Unduplicated;
+        }
+
+        if (Update.endsWith(",")) {
+            String substring = Update.substring(0, Update.length() - 1);
+            Update = substring;
+        }
+
+        if (!"".equals(this.Month_Groups.getText())) {
+            String Month_Groups = this.Month_Groups.getText();
+            Where = " Where month = " + "'" + Month_Groups + "'";
+        }
+        this.select = Update;
+        this.from = Where;
+
+       
+        r.set(this.select, this.from, this.where);
+        r.ModBabyMod();
+
+    }//GEN-LAST:event_UpdateActionPerformed
 
     /**
      * @param args the command line arguments
