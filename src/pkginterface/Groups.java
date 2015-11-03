@@ -41,10 +41,12 @@ private Reports r = new Reports();
         IU = new javax.swing.JLabel();
         SG = new javax.swing.JLabel();
         SGU = new javax.swing.JLabel();
+        M = new javax.swing.JLabel();
         IUtextfield = new javax.swing.JTextField();
         SGtextfield = new javax.swing.JTextField();
         SGUtextfield = new javax.swing.JTextField();
         Itextfield = new javax.swing.JTextField();
+        Mtextfield = new javax.swing.JTextField();
         Update = new javax.swing.JButton();
         Return = new javax.swing.JButton();
         groups_bg = new javax.swing.JLabel();
@@ -61,36 +63,45 @@ private Reports r = new Reports();
         I.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         I.setText("Isabella's");
         getContentPane().add(I);
-        I.setBounds(50, 100, 210, 30);
+        I.setBounds(50, 94, 210, 30);
 
         IU.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         IU.setForeground(new java.awt.Color(255, 102, 0));
         IU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         IU.setText("Isabella's Unduplicated");
         getContentPane().add(IU);
-        IU.setBounds(51, 153, 210, 30);
+        IU.setBounds(50, 140, 210, 30);
 
         SG.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         SG.setForeground(new java.awt.Color(255, 102, 0));
         SG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SG.setText("Support Groups");
         getContentPane().add(SG);
-        SG.setBounds(50, 206, 210, 30);
+        SG.setBounds(50, 183, 210, 30);
 
         SGU.setFont(new java.awt.Font("Century Gothic", 1, 15)); // NOI18N
         SGU.setForeground(new java.awt.Color(255, 102, 0));
         SGU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SGU.setText("Support Groups Unduplicated");
         getContentPane().add(SGU);
-        SGU.setBounds(44, 262, 220, 30);
+        SGU.setBounds(44, 230, 220, 30);
+
+        M.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        M.setForeground(new java.awt.Color(255, 102, 0));
+        M.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        M.setText("Month");
+        getContentPane().add(M);
+        M.setBounds(40, 273, 220, 30);
         getContentPane().add(IUtextfield);
-        IUtextfield.setBounds(295, 154, 270, 30);
+        IUtextfield.setBounds(295, 141, 270, 30);
         getContentPane().add(SGtextfield);
-        SGtextfield.setBounds(295, 207, 270, 30);
+        SGtextfield.setBounds(295, 185, 270, 30);
         getContentPane().add(SGUtextfield);
-        SGUtextfield.setBounds(295, 263, 270, 30);
+        SGUtextfield.setBounds(295, 273, 270, 30);
         getContentPane().add(Itextfield);
-        Itextfield.setBounds(295, 101, 270, 30);
+        Itextfield.setBounds(295, 96, 270, 30);
+        getContentPane().add(Mtextfield);
+        Mtextfield.setBounds(295, 229, 270, 30);
 
         Update.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         Update.setForeground(new java.awt.Color(255, 102, 0));
@@ -101,7 +112,7 @@ private Reports r = new Reports();
             }
         });
         getContentPane().add(Update);
-        Update.setBounds(230, 330, 140, 40);
+        Update.setBounds(230, 340, 140, 40);
 
         Return.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +217,8 @@ private Reports r = new Reports();
     private javax.swing.JLabel IU;
     private javax.swing.JTextField IUtextfield;
     private javax.swing.JTextField Itextfield;
+    private javax.swing.JLabel M;
+    private javax.swing.JTextField Mtextfield;
     private javax.swing.JButton Return;
     private javax.swing.JLabel SG;
     private javax.swing.JLabel SGU;
