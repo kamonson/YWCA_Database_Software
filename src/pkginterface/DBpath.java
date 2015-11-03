@@ -5,6 +5,12 @@
  */
 package pkginterface;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kat
@@ -55,6 +61,11 @@ public class DBpath extends javax.swing.JFrame {
         Change.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         Change.setForeground(new java.awt.Color(255, 102, 0));
         Change.setText("Change");
+        Change.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChangeActionPerformed(evt);
+            }
+        });
         getContentPane().add(Change);
         Change.setBounds(180, 170, 140, 50);
         getContentPane().add(Return);
@@ -70,6 +81,21 @@ public class DBpath extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeActionPerformed
+        // TODO add your handling code here:
+        
+        //Set the path of database file
+        String locationData = "locationData.txt";
+        String location = this.DBpath.getText();
+        byte[] arrByte = location.getBytes();
+        try (OutputStream out = new BufferedOutputStream(new FileOutputStream(locationData), 1024)) {
+            out.write(arrByte);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JOptionPane.showMessageDialog(null,"Changed!");
+    }//GEN-LAST:event_ChangeActionPerformed
 
     /**
      * @param args the command line arguments
