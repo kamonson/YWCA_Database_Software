@@ -94,6 +94,7 @@ public class Login extends javax.swing.JFrame {
         }
         if (pwd.equals("Zeus")) {
             Main_Menu.main(args);
+            this.dispose();
         } else if (pwd.equals("Peon")) {
             YWCA_DatabasePeon.main(args);
         } else {

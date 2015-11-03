@@ -54,7 +54,7 @@ public class Main_Menu extends javax.swing.JFrame {
         dbpath = new javax.swing.JButton();
         main_bg = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("YWCA Database Main Menu");
         setMaximumSize(new java.awt.Dimension(600, 470));
         setMinimumSize(new java.awt.Dimension(600, 470));
@@ -72,6 +72,11 @@ public class Main_Menu extends javax.swing.JFrame {
         reports.setForeground(new java.awt.Color(255, 102, 51));
         reports.setText("Reports");
         reports.setToolTipText("");
+        reports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportsActionPerformed(evt);
+            }
+        });
         getContentPane().add(reports);
         reports.setBounds(134, 113, 330, 40);
 
@@ -81,6 +86,12 @@ public class Main_Menu extends javax.swing.JFrame {
         modify.setText("Modify");
         getContentPane().add(modify);
         modify.setBounds(134, 169, 330, 40);
+
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
         getContentPane().add(logout);
         logout.setBounds(20, 360, 90, 70);
 
@@ -97,6 +108,18 @@ public class Main_Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportsActionPerformed
+        String[] args = null;
+        Reports.main(args);// TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_reportsActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+              String[] args = null;
+        Login.main(args);// TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments

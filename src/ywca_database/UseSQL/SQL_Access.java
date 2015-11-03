@@ -6,8 +6,7 @@
 package ywca_database.UseSQL;
 
 import java.sql.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import pkginterface.Reports;
 import ywca_database.YWCA_DatabaseZeus;
 
 /**
@@ -32,7 +31,7 @@ public class SQL_Access {
                 pass += " ,,,NC,,, ";
             }
             System.out.println(pass);
-            YWCA_DatabaseZeus.QueryResults(pass);
+            Reports.QueryResults(pass);
             while (rs.next()) {
                 pass = "";
                 for (int i = 1; i < passNum + 2; i++) {
@@ -40,7 +39,7 @@ public class SQL_Access {
                     pass += " ,,,NC,,, ";
                 }
                 System.out.println(pass);
-                YWCA_DatabaseZeus.QueryResults(pass);
+                Reports.QueryResults(pass);
             }
             rs.close();
             stmt.close();
