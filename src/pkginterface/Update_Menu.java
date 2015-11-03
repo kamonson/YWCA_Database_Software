@@ -88,6 +88,11 @@ public class Update_Menu extends javax.swing.JFrame {
         Counseling.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         Counseling.setForeground(new java.awt.Color(255, 102, 0));
         Counseling.setText("Counseling");
+        Counseling.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CounselingActionPerformed(evt);
+            }
+        });
         getContentPane().add(Counseling);
         Counseling.setBounds(135, 165, 330, 40);
 
@@ -117,6 +122,11 @@ public class Update_Menu extends javax.swing.JFrame {
         Main_Menu.main(args);// TODO add your handling code here:
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void CounselingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CounselingActionPerformed
+       Main_Menu.CounselingMain();
+       this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_CounselingActionPerformed
 
     /**
      * @param args the command line arguments

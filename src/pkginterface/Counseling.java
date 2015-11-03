@@ -128,6 +128,12 @@ int passNum;
         Month.setText("Month");
         getContentPane().add(Month);
         Month.setBounds(40, 280, 220, 30);
+
+        Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Return);
         Return.setBounds(10, 390, 250, 50);
 
@@ -156,24 +162,24 @@ int passNum;
 
       
          if (this.IntakeDrop.getSelectedIndex() == 0) {
-            String melva_intakes = " Teri_Intakes = '" + this.OngoingTF.getText() + "',";
+            String melva_intakes = " Teri_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
         }else if(this.IntakeDrop.getSelectedIndex() == 1){
-            String melva_intakes = " Emma_Intakes = '" + this.OngoingTF.getText() + "',";
+            String melva_intakes = " Emma_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
         }else if(this.IntakeDrop.getSelectedIndex() == 2){
-            String melva_intakes = " Melva_Intakes = '" + this.OngoingTF.getText() + "',";
+            String melva_intakes = " Melva_OnGoing = '" + this.OngoingTF.getText() + "',";
             Update += melva_intakes;
         }else Update += "";
       
  if (this.IntakeDrop1.getSelectedIndex() == 0) {
-            String melva_intakes = " Teri_Intakes = '" + this.WalkinTF.getText() + "',";
+            String melva_intakes = " Teri_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
         }else if(this.IntakeDrop1.getSelectedIndex() == 1){
-            String melva_intakes = " Emma_Intakes = '" + this.WalkinTF.getText() + "',";
+            String melva_intakes = " Emma_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
         }else if(this.IntakeDrop1.getSelectedIndex() == 2){
-            String melva_intakes = " Melva_Intakes = '" + this.WalkinTF.getText() + "',";
+            String melva_intakes = " Melva_Walkins = '" + this.WalkinTF.getText() + "',";
             Update += melva_intakes;
         }else Update += "";
 
@@ -188,6 +194,7 @@ int passNum;
         }
         this.select = Update;
         this.from = Where;
+        this.where = "";
 
         this.ModBabyMod();
                JOptionPane.showMessageDialog(null, "Complete");
@@ -207,6 +214,12 @@ int passNum;
     private void IntakeDrop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntakeDrop1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IntakeDrop1ActionPerformed
+
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+               String[] args = null;
+       Update_Menu.main(args);
+       this.dispose();
+    }//GEN-LAST:event_ReturnActionPerformed
 
     public void ModBabyMod() {
         
@@ -269,7 +282,7 @@ int passNum;
             this.where = " where ";
             this.Query = "";
             this.passNum = 0;
-        } 
+        }} 
     /**
      * @param args the command line arguments
      */

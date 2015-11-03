@@ -137,6 +137,11 @@ public class Main_Menu extends javax.swing.JFrame {
         Groups.main(args);
     }
     
+    public static void CounselingMain(){
+        String[] args = null;
+        Counseling.main(args);
+    }
+    
     /**
      * @param args the command line arguments
      */
