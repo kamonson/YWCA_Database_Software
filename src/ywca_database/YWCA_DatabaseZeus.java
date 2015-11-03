@@ -550,12 +550,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Groups_Update", Groups);
 
-        Teri_Intakes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Teri_IntakesActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Teri_Intakes (leave field blank if no change is needed)");
 
         jLabel3.setText("Emma_Intakes");
@@ -1453,10 +1447,6 @@ public class YWCA_DatabaseZeus extends javax.swing.JFrame {
         this.GoBabyGo(jTable2);
 
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void Teri_IntakesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Teri_IntakesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Teri_IntakesActionPerformed
 
     private void IsabellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IsabellasActionPerformed
         // TODO add your handling code here:

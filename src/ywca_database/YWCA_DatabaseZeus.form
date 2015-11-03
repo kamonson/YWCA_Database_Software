@@ -446,9 +446,6 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="Teri_Intakes">
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Teri_IntakesActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
