@@ -16,6 +16,14 @@ public class Counseling extends javax.swing.JFrame {
      */
     public Counseling() {
         initComponents();
+        
+        Update.setOpaque(false);
+        Update.setContentAreaFilled(false);
+        Update.setBorderPainted(false);
+        
+        Return.setOpaque(false);
+        Return.setContentAreaFilled(false);
+        Return.setBorderPainted(false);
     }
 
     /**
@@ -27,18 +35,68 @@ public class Counseling extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        IntakeDrop = new javax.swing.JComboBox();
+        IntakeDrop1 = new javax.swing.JComboBox();
+        IntakeDrop2 = new javax.swing.JComboBox();
+        Update = new javax.swing.JButton();
+        IntakeTF = new javax.swing.JTextField();
+        MonthTF = new javax.swing.JTextField();
+        OngoingTF = new javax.swing.JTextField();
+        WalkinTF = new javax.swing.JTextField();
+        Month = new javax.swing.JLabel();
+        Return = new javax.swing.JButton();
+        counseling_bg = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(600, 470));
+        setMinimumSize(new java.awt.Dimension(600, 470));
+        setPreferredSize(new java.awt.Dimension(600, 470));
+        setSize(new java.awt.Dimension(600, 470));
+        getContentPane().setLayout(null);
+
+        IntakeDrop.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Ongoing", "Emma's Ongoing", "Melva's Ongoing" }));
+        IntakeDrop.setMaximumSize(new java.awt.Dimension(154, 27));
+        getContentPane().add(IntakeDrop);
+        IntakeDrop.setBounds(50, 170, 210, 27);
+
+        IntakeDrop1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Walk-Ins", "Emma's Walk-Ins", "Melva's Walk-Ins" }));
+        IntakeDrop1.setMaximumSize(new java.awt.Dimension(154, 27));
+        getContentPane().add(IntakeDrop1);
+        IntakeDrop1.setBounds(50, 226, 210, 27);
+
+        IntakeDrop2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Intakes", "Emma's Intakes", "Melva's Intakes" }));
+        IntakeDrop2.setMaximumSize(new java.awt.Dimension(154, 27));
+        getContentPane().add(IntakeDrop2);
+        IntakeDrop2.setBounds(50, 115, 210, 27);
+
+        Update.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        Update.setForeground(new java.awt.Color(255, 102, 0));
+        Update.setText("Update");
+        getContentPane().add(Update);
+        Update.setBounds(230, 330, 140, 40);
+        getContentPane().add(IntakeTF);
+        IntakeTF.setBounds(295, 113, 270, 30);
+        getContentPane().add(MonthTF);
+        MonthTF.setBounds(293, 279, 270, 30);
+        MonthTF.getAccessibleContext().setAccessibleDescription("");
+
+        getContentPane().add(OngoingTF);
+        OngoingTF.setBounds(293, 168, 270, 30);
+        getContentPane().add(WalkinTF);
+        WalkinTF.setBounds(293, 224, 270, 30);
+
+        Month.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        Month.setForeground(new java.awt.Color(255, 102, 0));
+        Month.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Month.setText("Month");
+        getContentPane().add(Month);
+        Month.setBounds(40, 280, 220, 30);
+        getContentPane().add(Return);
+        Return.setBounds(10, 390, 250, 50);
+
+        counseling_bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkginterface/ywca_counseling.png"))); // NOI18N
+        getContentPane().add(counseling_bg);
+        counseling_bg.setBounds(0, 0, 600, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +137,16 @@ public class Counseling extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox IntakeDrop;
+    private javax.swing.JComboBox IntakeDrop1;
+    private javax.swing.JComboBox IntakeDrop2;
+    private javax.swing.JTextField IntakeTF;
+    private javax.swing.JLabel Month;
+    private javax.swing.JTextField MonthTF;
+    private javax.swing.JTextField OngoingTF;
+    private javax.swing.JButton Return;
+    private javax.swing.JButton Update;
+    private javax.swing.JTextField WalkinTF;
+    private javax.swing.JLabel counseling_bg;
     // End of variables declaration//GEN-END:variables
 }
