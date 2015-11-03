@@ -290,7 +290,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel19">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Isabellas"/>
+                        <Property name="text" type="java.lang.String" value="Isabellas (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Isabellas_Unduplicated">
@@ -376,7 +376,7 @@
                                                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="886" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="648" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="Teri_Walkins" alignment="0" max="32767" attributes="0"/>
                                           <Component id="Emma_Walkins" alignment="0" max="32767" attributes="0"/>
@@ -452,7 +452,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Teri_Intakes"/>
+                        <Property name="text" type="java.lang.String" value="Teri_Intakes (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Emma_Intakes">
@@ -624,7 +624,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Family Law"/>
+                        <Property name="text" type="java.lang.String" value="Family Law (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="WAW_LegalAdvocate">
@@ -707,31 +707,81 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="HHAA_ClientID" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_HOH" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_NumCaseMembers" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_DOB" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_DOBQuality" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_Race" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_Ethnicity" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_Gender" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_Veteran" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_DisablingCondition" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_PriorResidence" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="HHAA_LengthStay" pref="383" max="32767" attributes="0"/>
+                                      </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="HHAA_HousingAtEntry" max="32767" attributes="0"/>
+                                                  <Component id="HHAA_EnrollDate" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="HHAA_Bednights" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Component id="HHAA_ExitDate" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="HHAA_ExitDestination" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="HHAA_Program" alignment="0" pref="402" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                          <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="HHAA_EntranceID" min="-2" pref="396" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="BtnHHAA" alignment="1" min="-2" pref="218" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="766" max="32767" attributes="0"/>
+                              <EmptySpace pref="149" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -739,136 +789,246 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_ClientID" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_HousingAtEntry" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_HOH" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_EnrollDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_NumCaseMembers" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_ExitDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField7" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_DOB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_Bednights" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_DOBQuality" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_ExitDestination" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_Race" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_Program" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
+                              <Component id="HHAA_Ethnicity" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
+                              <Component id="HHAA_Gender" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField12" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="HHAA_Veteran" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HHAA_EntranceID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="323" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="HHAA_DisablingCondition" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="HHAA_PriorResidence" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="HHAA_LengthStay" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="64" max="32767" attributes="0"/>
+                              <Component id="BtnHHAA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="jTextField2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField2"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_ClientID">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel32">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Client ID"/>
+                        <Property name="text" type="java.lang.String" value="Client ID (leave field blank if no change is needed)"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField3">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField3"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_HOH">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel33">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Relationship to Head of Household"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField4">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField4"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_NumCaseMembers">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HHAA_NumCaseMembersActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel34">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Number of Case Members"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField7">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField7"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_DOB">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel35">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Date of Birth (xx/xx/xxxx)"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField8">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField8"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_DOBQuality">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel36">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="DOB Quality"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField9">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField9"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_Race">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel37">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Race"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField10">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField10"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_Ethnicity">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel38">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Ethnicity"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField11">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField11"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_Gender">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel39">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Gender"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField12">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField12"/>
-                      </Properties>
+                    <Component class="javax.swing.JTextField" name="HHAA_Veteran">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel40">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Veteran (YES / NO)"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_DisablingCondition">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel41">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Disabling Condition (YES / NO)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_PriorResidence">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel42">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Prior Residence"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_LengthStay">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel43">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Length of Stay (days)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_HousingAtEntry">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel44">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Housing Status at Entry"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_EnrollDate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel45">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Enroll Date (xx/xx/xxxx)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_ExitDate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel46">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Exit Date (xx/xx/xxxx)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_Bednights">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel47">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Bednights"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_ExitDestination">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel48">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Destination at Exit"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_Program">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel49">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Program"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HHAA_EntranceID">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel50">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Entrance ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="BtnHHAA">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Modify HHAA"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnHHAAActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
