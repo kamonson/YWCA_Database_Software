@@ -42,8 +42,8 @@ public class DBpath extends javax.swing.JFrame {
         dbpath_bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 400));
-        setMinimumSize(new java.awt.Dimension(500, 300));
+        setMaximumSize(new java.awt.Dimension(500, 320));
+        setMinimumSize(new java.awt.Dimension(500, 320));
         getContentPane().setLayout(null);
 
         DBpath.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
