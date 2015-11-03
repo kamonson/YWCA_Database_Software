@@ -30,7 +30,6 @@ int passNum;
     /**
      * Creates new form Groups
      */
-private Reports r = new Reports();
 
     public Groups() {
         initComponents();

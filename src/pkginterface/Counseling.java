@@ -5,12 +5,31 @@
  */
 package pkginterface;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import ywca_database.UseSQL.SQL_Access;
+import ywca_database.YWCA_DatabaseZeus;
+
+
+
 /**
  *
  * @author Kat
  */
 public class Counseling extends javax.swing.JFrame {
-
+String select, from, where;
+String Query = "";
+int passNum;
+    
     /**
      * Creates new form Counseling
      */
@@ -48,32 +67,50 @@ public class Counseling extends javax.swing.JFrame {
         counseling_bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 470));
         setMinimumSize(new java.awt.Dimension(600, 470));
-        setPreferredSize(new java.awt.Dimension(600, 470));
-        setSize(new java.awt.Dimension(600, 470));
         getContentPane().setLayout(null);
 
         IntakeDrop.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Ongoing", "Emma's Ongoing", "Melva's Ongoing" }));
         IntakeDrop.setMaximumSize(new java.awt.Dimension(154, 27));
         getContentPane().add(IntakeDrop);
-        IntakeDrop.setBounds(50, 170, 210, 27);
+        IntakeDrop.setBounds(50, 170, 210, 26);
 
         IntakeDrop1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Walk-Ins", "Emma's Walk-Ins", "Melva's Walk-Ins" }));
         IntakeDrop1.setMaximumSize(new java.awt.Dimension(154, 27));
+        IntakeDrop1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntakeDrop1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(IntakeDrop1);
-        IntakeDrop1.setBounds(50, 226, 210, 27);
+        IntakeDrop1.setBounds(50, 226, 210, 26);
 
         IntakeDrop2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Teri's Intakes", "Emma's Intakes", "Melva's Intakes" }));
         IntakeDrop2.setMaximumSize(new java.awt.Dimension(154, 27));
+        IntakeDrop2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntakeDrop2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(IntakeDrop2);
-        IntakeDrop2.setBounds(50, 115, 210, 27);
+        IntakeDrop2.setBounds(50, 115, 210, 26);
 
         Update.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         Update.setForeground(new java.awt.Color(255, 102, 0));
         Update.setText("Update");
+        Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateActionPerformed(evt);
+            }
+        });
         getContentPane().add(Update);
         Update.setBounds(230, 330, 140, 40);
+
+        IntakeTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntakeTFActionPerformed(evt);
+            }
+        });
         getContentPane().add(IntakeTF);
         IntakeTF.setBounds(295, 113, 270, 30);
         getContentPane().add(MonthTF);
@@ -101,6 +138,138 @@ public class Counseling extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+   //Modify counsuling form 2015
+        String Update = "UPDATE Counseling_2015 SET";
+        String Where = "";
+       
+        if (this.IntakeDrop2.getSelectedIndex() == 0) {
+            String melva_intakes = " Teri_Intakes = '" + this.IntakeTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop2.getSelectedIndex() == 1){
+            String melva_intakes = " Emma_Intakes = '" + this.IntakeTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop2.getSelectedIndex() == 2){
+            String melva_intakes = " Melva_Intakes = '" + this.IntakeTF.getText() + "',";
+            Update += melva_intakes;
+        }else Update += "";
+
+      
+         if (this.IntakeDrop.getSelectedIndex() == 0) {
+            String melva_intakes = " Teri_Intakes = '" + this.OngoingTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop.getSelectedIndex() == 1){
+            String melva_intakes = " Emma_Intakes = '" + this.OngoingTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop.getSelectedIndex() == 2){
+            String melva_intakes = " Melva_Intakes = '" + this.OngoingTF.getText() + "',";
+            Update += melva_intakes;
+        }else Update += "";
+      
+ if (this.IntakeDrop1.getSelectedIndex() == 0) {
+            String melva_intakes = " Teri_Intakes = '" + this.WalkinTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop1.getSelectedIndex() == 1){
+            String melva_intakes = " Emma_Intakes = '" + this.WalkinTF.getText() + "',";
+            Update += melva_intakes;
+        }else if(this.IntakeDrop1.getSelectedIndex() == 2){
+            String melva_intakes = " Melva_Intakes = '" + this.WalkinTF.getText() + "',";
+            Update += melva_intakes;
+        }else Update += "";
+
+        if (Update.endsWith(",")) {
+            String substring = Update.substring(0, Update.length() - 1);
+            Update = substring;
+        }
+
+        if (!"".equals(this.MonthTF.getText())) {
+            String month = this.MonthTF.getText();
+            Where = " Where month = " + "'" + month + "'";
+        }
+        this.select = Update;
+        this.from = Where;
+
+        this.ModBabyMod();
+               JOptionPane.showMessageDialog(null, "Complete");
+    String[] args = null;
+        Update_Menu.main(args);
+        this.dispose();
+    }//GEN-LAST:event_UpdateActionPerformed
+
+    private void IntakeDrop2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntakeDrop2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IntakeDrop2ActionPerformed
+
+    private void IntakeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntakeTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IntakeTFActionPerformed
+
+    private void IntakeDrop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntakeDrop1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IntakeDrop1ActionPerformed
+
+    public void ModBabyMod() {
+        
+        String in = this.select;
+        this.passNum = 0;
+        Pattern p = Pattern.compile(",");
+        Matcher m = p.matcher(in);
+        while (m.find()) {
+            passNum++;
+        }
+        
+        this.Query = this.select + this.from + this.where + ";";
+        this.RunAccessQuery(Query, passNum);
+
+        //switch to reports and view changes
+//        this.jComboBox1.setSelectedIndex(0);
+//        this.RunActionPerformed(null);
+//        this.GoBabyGo(jTable1);
+        
+        //clear old stuff
+            this.select = "select ";
+            this.from = " from ";
+            this.where = " where ";
+            this.Query = "";
+            this.passNum = 0;
+    }
+
+ public void RunAccessQuery(String Query, int passNum) {
+        try {
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Connection accessDB;
+            //jdbc:odbcDriver{Microsoft Access Driver (*.mdb, *.accdb)} must be installed check data sources to ensure it is
+            //DBQ=<path to db>
+            //UID = Admin or username
+            //PWD= <blank> or password
+            String DBQ = "";
+
+            try {
+                InputStream DBLoc = new FileInputStream("locationData.txt");
+
+                java.util.Scanner s = new java.util.Scanner(DBLoc).useDelimiter("\\A");
+                DBQ = s.hasNext() ? s.next() : "";
+
+            } catch (IOException ex) {
+                System.out.print("Check and make sure you use the DBLocation tab");
+            }
+
+            String UID = "Admin";
+            String PWD = ";";
+            String database = String.format("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=%s\\YWCA_Core.mdb;UID =%s; PWD =%s", DBQ, UID, PWD);
+            accessDB = DriverManager.getConnection(database, "", "");
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            this.passNum = passNum;
+            SQL_Access.viewTable(accessDB, Query, this.passNum);
+        } catch (SQLException ex) {
+            Logger.getLogger(YWCA_DatabaseZeus.class.getName()).log(Level.SEVERE, null, ex);
+            //clear old stuff
+            this.select = "select ";
+            this.from = " from ";
+            this.where = " where ";
+            this.Query = "";
+            this.passNum = 0;
+        } 
     /**
      * @param args the command line arguments
      */
